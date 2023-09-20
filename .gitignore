@@ -1,0 +1,12 @@
+# ignore everything
+/*
+
+# except for these files...
+!README.md
+!LICENSE
+!.config
+!.bashrc
+!.xprofile
+!.wallpapers
+!.gitconfig
+!.gitignore
