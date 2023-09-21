@@ -229,13 +229,10 @@ sudo pacman -S xorg xorg-xinit qtile sddm alacritty
 
 Before rebooting, you have to enable sddm and the virtualbox guest additions
 ```bash
-sudo systemctl enable sddm
+sudo systemctl enable vboxservice sddm
 ```
 
-```bash
-sudo systemctl enable vboxservice
-```
-
+Now we can reboot
 ```bash
 reboot
 ```
