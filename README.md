@@ -238,10 +238,11 @@ reboot
 ```
 
 Now you will see the login screen of SDDM.
+In the top left corner it says "Qtile Wayland". Change it to just "Qtile".
 
 After login in sddm you will get to qtile, which is your desktop environment. 
 
-This are the basic key mappings:
+This are the basic Qtile key mappings:
 
 | Key                  | Action                      |
 | -------------------- | --------------------------- |
