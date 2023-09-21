@@ -16,9 +16,6 @@ return require('packer').startup(function(use)
     -- auto pairs
     use "windwp/nvim-autopairs"
 
-    -- which key
-    use 'folke/which-key.nvim'
-
     -- lua line
     use 'nvim-lualine/lualine.nvim'
 
