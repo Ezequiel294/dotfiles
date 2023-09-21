@@ -17,18 +17,16 @@ For the Arch ISO image, I recommend having qBtorrent (or any torrent downloader)
 - [Arch ISO](https://archlinux.org/download/)
 - [qBitorrent](https://www.qbittorrent.org/download)
 
-With VirtualBox and the Arch ISO installed, it's time to set up the virtual machine. Click "New", type a name for your virtual machine, and then select the ISO image you just installed and make sure the two last options are "Linux" and "Arch Linux (64-bit)". Now assign the amount of virtual RAM and CPU cores your VM (Virtual Machine) will have. VirtualBox has a guideline below each parameter (I think the colors are self-explanatory). I have 8GB of RAM and 4 cores in my Host, so I dedicated 5120MB of RAM and 2 cores for the Arch VM. Next, set the space for the virtual disc your Arch will have. The minimum is 25GB (512MB for the EFI partition, 20GB for the root, and 4.5GB for the swap partition), Although these values may change depending on who you ask.
-
- After creating the Arch VM, right-click on it and go to settings. Go to "Display" and set the video memory to max (128MB). Then in "Network", you can choose to leave it to "Attached to: NAT" or change it to "Bridged Adapter" (In NAT, the Arch uses the same IP as your host OS while in Bridged, your Arch will have its own IP address). Click on "OK" to apply the changes.
+For the Arch virtual machine:
+- Do not check "Enable EFI"
+- Assign all the video memory possible
+- At least 2GB of RAM
+- More than 15GB of storage
 
 Now we can start with the Arch Installation; I recommend opening the official guide to help.
 - [Arch Installation Guide](https://wiki.archlinux.org/title/Installation_guide)
 
-To start the VM, double-click on it.
-
-Select the first option, "Arch Linux install medium", by pressing the Enter key.
-
-After a lot of green "OK" you should get to the following screen:
+Start the VM, select the first boot option and after many "OK" you should get to this:
 
 ![image](https://github.com/Ezequiel294/Arch-Config/assets/119618678/19a71d73-35e0-4f36-bffd-467287bc1954)
 
@@ -54,9 +52,10 @@ Now it's time to create the disk partitions
 cfdisk
 ```
 
-Select "dos"; now, with "new", I must create an EFI partition and a root partition, but I recommend also having a swap partition (All 3 must be primary partitions). The first one of 512M, and the second one big enough so that only 4.5G are remaining for the third one. With the third partition of 4.5G selected, go to "type" and select "Linux swap / Solaris". To finish, select "write", write "yes" and then quit.
+Select "dos" if you are indeed in a VM.
+Here you make your partitions. You NEED an EFI and a root partition. Manage your home and swap as you wish.
 
-Now, let us format these partitions. The first partition will be for the EFI
+After making the partitions they have to be formatted. The first partition will be for the EFI
 ```bash
 mkfs.vfat -F 32 /dev/sda1
 ```
@@ -64,6 +63,7 @@ The second one is for the root
 ```bash
 mkfs.ext4 /dev/sda2
 ```
+(Home partition uses the same format)
 
 And the third one for the swap
 ```bash
@@ -89,7 +89,7 @@ You should get something like this.
 
 ![image](https://github.com/Ezequiel294/Arch-Config/assets/119618678/3368f925-1295-4400-a608-512d41343d57)
 
-Now it's time to install the essential packages. According to the arch wiki, only linux, linux-firmware, and base are essential, but I will also add base-devel, grub, virtualbox-guest-utils, and networkmanager. This might take a while.
+Now it's time to install the essential packages.
 ```bash
 pacstrap /mnt linux linux-firmware base base-devel grub virtualbox-guest-utils networkmanager
 ```
@@ -105,10 +105,11 @@ cat !$
 ```
 You can check everything looks good.
 
-The next step is to change the root of the system. You should see that "root" is not red anymore
+The next step is to change the root of the system.
 ```bash
 arch-chroot /mnt
 ```
+You should see that "root" is not red anymore
 
 Set the time zone
 ```bash
@@ -135,7 +136,7 @@ and add a password for your user
 passwd username
 ```
 
-Now add your user to the wheel group
+Now add your user to the wheel group so sudo works
 ```bash
 usermod -aG wheel username
 ```
@@ -145,12 +146,7 @@ Next, install sudo and nano
 pacman -S sudo nano
 ```
 
-and now edit with nano the file /etc/sudoers
-```bash
-nano /etc/sudoers
-```
-
-Uncomment this line, save, and exit
+and now edit with nano the file /etc/sudoers and uncomment this line:
 ```bash
 # %wheel ALL=(ALL) ALL
 ```
@@ -169,7 +165,8 @@ Create the locale.conf file
 ```bash
 touch /etc/locale.conf
 ```
-And set the LANG variable using nano to:
+
+And set the LANG variable using nano:
 ```bash
 LANG=en_US.UTF-8
 ```
@@ -246,6 +243,8 @@ reboot
 Now you will see the login screen of SDDM.
 
 After login in sddm you will get to qtile, which is your desktop environment. 
+
+This are the basic key mappings:
 
 | Key                  | Action                      |
 | -------------------- | --------------------------- |
