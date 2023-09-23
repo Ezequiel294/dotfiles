@@ -4,9 +4,11 @@
 # except for these files...
 !README.md
 !LICENSE
+!install_packages.sh
 !.config
 !.bashrc
 !.xprofile
 !.wallpapers
+!.gtkrc-2.0
 !.gitconfig
 !.gitignore
