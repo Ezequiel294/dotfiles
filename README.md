@@ -253,3 +253,5 @@ This are the basic Qtile key mappings:
 | **mod + [123456789]** | go to workspace [123456789]|
 | **mod + ctrl + r**   | restart qtile               |
 | **mod + ctrl + q**   | logout                      |
+
+pamac-all paru sardi-icons virtualbox-guest-utils visual-studio-code-bin
