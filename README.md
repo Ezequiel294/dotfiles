@@ -255,7 +255,7 @@ This are the basic Qtile key mappings:
 | **mod + ctrl + q**   | logout                      |
 
 ```bash
-pacman -Qqe | tr '\n' ' ' > packages.txt
+pacman -Qqe | tr '\n' ' ' > pkg.txt
 ```
 
 pamac-all paru sardi-icons virtualbox-guest-utils visual-studio-code-bin
