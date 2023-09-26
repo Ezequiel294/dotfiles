@@ -10,7 +10,7 @@ git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
 cat .pkg | xargs yay -S --needed --noconfirm
 
 # Change shell to fish
-chsh
 # Fish route /usr/bin/fish
+chsh
 
 reboot
