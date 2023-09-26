@@ -264,9 +264,10 @@ alias dotfiles="git --git-dir $HOME/.dotfiles/ --work-tree $HOME"
 ```
 
 With that done, you can now clone this repository and checkout to restore these configurations.
+The --force is to overwritte the current config files that are the default ones.
 ```bash
 git clone --bare https://github.com/Ezequiel294/dotfiles .dotfiles
-dotfiles checkout
+dotfiles checkout --force
 ```
 
 Execute the 'setup.sh' script that will automatically install all needed packages so that the configurations work correctly.
