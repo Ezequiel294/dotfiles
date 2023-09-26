@@ -26,7 +26,7 @@ For the Arch virtual machine:
 Now we can start with the Arch Installation; I recommend opening the official guide to help.
 - [Arch Installation Guide](https://wiki.archlinux.org/title/Installation_guide)
 
-Start the VM, select the first boot option and after many "OK" you should get to this:
+Start the VM, select the first boot option, and after many "OK" you should get to this:
 
 ![image](https://github.com/Ezequiel294/Arch-Config/assets/119618678/19a71d73-35e0-4f36-bffd-467287bc1954)
 
@@ -55,7 +55,7 @@ cfdisk
 Select "dos" if you are indeed in a VM.
 Here you make your partitions. You NEED an EFI and a root partition. Manage your home and swap as you wish.
 
-After making the partitions they have to be formatted. The first partition will be for the EFI
+After making the partitions, they have to be formatted. The first partition will be for the EFI
 ```bash
 mkfs.vfat -F 32 /dev/sda1
 ```
@@ -109,7 +109,7 @@ The next step is to change the root of the system.
 ```bash
 arch-chroot /mnt
 ```
-You should see that "root" is not red anymore
+You should see that the 'root' is not red anymore.
 
 Set the time zone
 ```bash
@@ -146,7 +146,7 @@ Next, install sudo and nano
 pacman -S sudo nano
 ```
 
-and now edit with nano the file /etc/sudoers and uncomment this line:
+And now edit with nano the file /etc/sudoers and uncomment this line:
 ```bash
 # %wheel ALL=(ALL) ALL
 ```
@@ -171,7 +171,7 @@ And set the LANG variable using nano:
 LANG=en_US.UTF-8
 ```
 
-Now let us configure the boot loader, which is grub
+Now let us configure the boot loader, which is Grub
 ```bash
 grub-install /dev/sda
 ```
@@ -204,7 +204,7 @@ to go back to the ISO root and then
 shutdown now
 ```
 
-Now, to be sure, right-click on your Arch VM machine, go to "settings", then to "system", and move the "Hard Disk" to the top of the priorities and then go to "storage", and right-click on the blue disk with the name of the Arch ISO and click on "Remove Attachment". Finish by clicking "OK" to save changes.
+Now, to be sure, right-click on your Arch VM machine, go to "settings," then to "system," move the "Hard Disk" to the top of the priorities and then go to "storage," and right-click on the blue disk with the name of the Arch ISO and click on "Remove Attachment." Finish by clicking "OK" to save changes.
 
 When you start your Arch system again, you will find yourself in the grub. Just click "enter" on the fists option. The next step is to log in to your user, and congratulations, this is your system.
 
@@ -212,7 +212,7 @@ You will notice that if you do a
 ```bash
 ping google.com
 ```
-You won't have internet. This is because you have to enable and start networkmanager
+You won't have internet. This is because you have to enable and start NetworkManager
 ```bash
 sudo systemctl enable NetworkManager
 ```
@@ -227,7 +227,7 @@ With that out of the way, we can install our graphical interface.
 sudo pacman -S xorg xorg-xinit qtile sddm alacritty
 ```
 
-Before rebooting, you have to enable sddm and the virtualbox guest additions
+Before rebooting, you have to enable sddm and the VirtualBox guest additions
 ```bash
 sudo systemctl enable vboxservice sddm
 ```
@@ -237,12 +237,12 @@ Now we can reboot
 reboot
 ```
 
-Now you will see the login screen of SDDM.
-In the top left corner it says "Qtile Wayland". Change it to just "Qtile".
+Now, you will see the login screen of SDDM.
+In the top left corner, it says "Qtile Wayland." Change it to just "Qtile".
 
-After login in sddm you will get to qtile, which is your desktop environment. 
+After logging in sddm, you will get to qtile, your desktop environment. 
 
-This are the basic Qtile key mappings:
+These are the basic Qtile key mappings:
 
 | Key                  | Action                      |
 | -------------------- | --------------------------- |
@@ -254,8 +254,27 @@ This are the basic Qtile key mappings:
 | **mod + ctrl + r**   | restart qtile               |
 | **mod + ctrl + q**   | logout                      |
 
+Now, you can open the terminal and edit your .bashrc file.
+Add the following line to it:
 ```bash
+alias dotfiles="git --git-dir $HOME/.dotfiles/ --work-tree $HOME"
+```
+
+With that done, you can now clone this repository and checkout to restore these configurations.
+```bash
+git clone --bare https://github.com/Ezequiel294/dotfiles .dotfiles
+dotfiles checkout
+```
+
+Execute the 'setup.sh' script that will automatically install all needed packages so that the configurations work correctly.
+
+To update the .pkg file with all the packages installed in your system, you have to remove the .pkg file and regenerate it
+```bash
+rm .pkg
 pacman -Qqe | tr '\n' ' ' | sed 's/.$//' > .pkg
 ```
 
-pamac-all paru sardi-icons virtualbox-guest-utils visual-studio-code-bin
+To push the modified repository, you have to use dotfiles instead of git.
+```bash
+dotfiles push -u origin main
+```
