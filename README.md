@@ -2,6 +2,7 @@
 
 - [Overview](#overview)
 - [Arch Installation in VirtualBox](#arch-installation-in-virtualbox)
+- [Configuration](#configuration)
 
 # Overview
 
@@ -253,6 +254,8 @@ These are the basic Qtile key mappings:
 | **mod + [123456789]** | go to workspace [123456789]|
 | **mod + ctrl + r**   | restart qtile               |
 | **mod + ctrl + q**   | logout                      |
+
+# Configuration
 
 Now, you can open the terminal and edit your .bashrc file.
 Add the following line to it:
