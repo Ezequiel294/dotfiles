@@ -6,6 +6,8 @@ sudo pacman -Syu --noconfirm
 # Install yay
 if ! pacman -Qi yay &> /dev/null; then
     git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
+else
+    echo "You already have yay installed."
 fi
 
 # Install packages from .pkg file
@@ -15,6 +17,8 @@ cat .pkg | xargs yay -S --needed --noconfirm
 # Fish route /usr/bin/fish
 if [[ "$SHELL" != *fish* ]]; then
     chsh
+else
+    echo "You already have fish as your shell."
 fi
 
 # Ask to reboot the system
