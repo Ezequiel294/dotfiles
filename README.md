@@ -257,16 +257,23 @@ These are the basic Qtile key mappings:
 
 # Configuration
 
-Now, you can open the terminal and edit your .bashrc file.
-Add the following line to it:
+To start the configuration process, let's start by cloning my dotfiles repo with a bare clone. 
+```bash
+git clone --bare https://github.com/Ezequiel294/dotfiles .dotfiles
+```
+
+Now, you will need to edit your .bashrc file. Add the following line where all the aliases are set:
 ```bash
 alias dotfiles="git --git-dir $HOME/.dotfiles/ --work-tree $HOME"
 ```
 
-With that done, you can now clone this repository and checkout to restore these configurations.
-The --force is to overwritte the current config files that are the default ones.
+Now reboot so that the changes in the .bashrc file take effect.
 ```bash
-git clone --bare https://github.com/Ezequiel294/dotfiles .dotfiles
+reboot
+```
+
+Once back on, it's time to 'check out' the .dotfiles repo we cloned before. The --force is to overwrite the current config files that are the default ones.
+```bash
 dotfiles checkout --force
 ```
 
