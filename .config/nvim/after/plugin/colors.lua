@@ -1,3 +1,3 @@
 require('onedark').setup {}
 require('gruvbox').setup {}
-vim.cmd('colorscheme onedark')
+vim.cmd('colorscheme gruvbox')

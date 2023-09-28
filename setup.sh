@@ -32,6 +32,13 @@ else
     fi
 fi
 
+# Ranger icons
+if ! [ -d "$HOME/.config/ranger/plugins" ]; then
+    bash $HOME/.config/ranger/install-plugs.sh
+else
+    echo "Ranger icons are already installed"
+fi
+
 # Ask to reboot the system
 read -p "Do you want to reboot the PC? (y/n): " choice
 case "$choice" in
