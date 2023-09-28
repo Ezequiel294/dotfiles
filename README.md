@@ -292,3 +292,18 @@ To push the modified repository, you have to use dotfiles instead of git.
 ```bash
 dotfiles push -u origin main
 ```
+
+## Rofi
+
+With this theme, rofi presents some minor problems.
+
+Delete the following lines in /usr/share/rofi/themes/onedark.rasi
+```bash
+font: "Knack Nerd Font 14";
+algo de purple
+```
+
+## Wallpaper
+
+To set a wallpaper on qtile, you need something like feh or nitrogen. 
+Open nitrogen with rofi and select the directory using the preferences button in which your wallpapers are stored. In my case is .wallpapers, and the rest is very easy.
