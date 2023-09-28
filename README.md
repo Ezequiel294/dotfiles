@@ -298,9 +298,13 @@ dotfiles push -u origin main
 With this theme, rofi presents some minor problems.
 
 Delete the following lines in /usr/share/rofi/themes/onedark.rasi
-```bash
+They are on line 29 and from 84 to 86
+```rasi
 font: "Knack Nerd Font 14";
-algo de purple
+
+element active, element selected active {
+  text-color: @purple;
+}
 ```
 
 ## Wallpaper
