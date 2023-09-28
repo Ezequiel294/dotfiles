@@ -21,6 +21,9 @@ else
     echo "You already have fish as your shell."
 fi
 
+# Set a wallpaper
+nitrogen --set-zoom-fill $HOME/.wallpapers/arco-wallpaper.jpg
+
 # Ask to reboot the system
 read -p "Do you want to reboot the PC? (y/n): " choice
 case "$choice" in
