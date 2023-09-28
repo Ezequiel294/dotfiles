@@ -21,6 +21,9 @@ else
     echo "You already have fish as your shell."
 fi
 
+# Rofi theme
+mkdir Repositories && cd Repositories && git clone https://github.com/davatorium/rofi-themes.git && sudo cp rofi-themes/User\ Themes/onedark.rasi /usr/share/rofi/themes
+
 # Set a wallpaper
 nitrogen --set-zoom-fill $HOME/.wallpapers/arco-wallpaper.jpg
 
