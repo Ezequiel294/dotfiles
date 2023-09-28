@@ -3,7 +3,7 @@
 # Ensure the system is up-to-date
 sudo pacman -Syu --noconfirm
 
-# Install yay
+# Install paru
 if ! pacman -Qi paru &> /dev/null; then
     git clone https://aur.archlinux.org/paru.git && cd paru && makepkg -si && cd
 else
@@ -22,10 +22,15 @@ else
 fi
 
 # Rofi theme
-mkdir Repositories && cd Repositories && git clone https://github.com/davatorium/rofi-themes.git && sudo cp rofi-themes/User\ Themes/onedark.rasi /usr/share/rofi/themes
-
-# Set a wallpaper
-nitrogen --set-zoom-fill $HOME/.wallpapers/arco-wallpaper.jpg
+if ! [ -d "$HOME/Repositories" ]; then
+    mkdir $HOME/Repositories && cd $HOME/Repositories && git clone https://github.com/davatorium/rofi-themes.git && sudo cp rofi-themes/User\ Themes/onedark.rasi /usr/share/rofi/themes
+else
+    if ! [ -d "$HOME/Repositories/rofi-themes" ]; then
+        cd $HOME/Repositories && git clone https://github.com/davatorium/rofi-themes.git && sudo cp rofi-themes/User\ Themes/onedark.rasi /usr/share/rofi/themes
+    else
+        echo "rofi-themes are already installed."
+    fi
+fi
 
 # Ask to reboot the system
 read -p "Do you want to reboot the PC? (y/n): " choice
