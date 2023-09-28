@@ -225,7 +225,7 @@ Now you should have internet.
 
 With that out of the way, we can install our graphical interface.
 ```bash
-sudo pacman -S xorg xorg-xinit qtile sddm alacritty
+sudo pacman -S xorg xorg-xinit qtile sddm alacritty git
 ```
 
 Before rebooting, you have to enable sddm and the VirtualBox guest additions
