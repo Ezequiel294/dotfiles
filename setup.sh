@@ -11,7 +11,7 @@ else
 fi
 
 # Install packages from .pkg file
-cat .pkg | xargs paru -S --needed
+cat .pkg | xargs paru -S --needed --noconfirm
 
 # Change shell to fish
 # Fish route /usr/bin/fish
