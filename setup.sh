@@ -4,14 +4,14 @@
 sudo pacman -Syu --noconfirm
 
 # Install yay
-if ! pacman -Qi yay &> /dev/null; then
-    git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
+if ! pacman -Qi paru &> /dev/null; then
+    git clone https://aur.archlinux.org/paru.git && cd paru && makepkg -si && cd
 else
-    echo "You already have yay installed."
+    echo "You already have paru installed."
 fi
 
 # Install packages from .pkg file
-cat .pkg | xargs yay -S --needed --noconfirm
+cat .pkg | xargs paru -S --needed
 
 # Change shell to fish
 # Fish route /usr/bin/fish
@@ -26,5 +26,5 @@ read -p "Do you want to reboot the PC? (y/n): " choice
 case "$choice" in
   y|Y ) echo "Rebooting..."; reboot;;
   n|N ) echo "You can reboot manually later.";;
-  * ) echo "Invalid input. Please enter y or n.";;
+  * ) echo "Invalid input. Please reboot manually";;
 esac
