@@ -3,8 +3,8 @@
 - [Overview](#overview)
 - [Arch Installation in VirtualBox](#arch-installation-in-virtualbox)
 - [Configuration](#configuration)
-  - [Rofi](##rofi)
-  - [Wallpaper](##wallpaper)
+  - [Rofi](#rofi)
+  - [Wallpaper](#wallpaper)
 
 # Overview
 
