@@ -9,16 +9,13 @@
 # Overview
 
 This is a guide to installing and configuring my Arch setup. I will assume that you are
-comfortable with Linux-based operating systems and command line interfaces.
+comfortable with Linux-based operating systems, virtual machines, and command line interfaces.
 
 # Arch Installation in VirtualBox
 
-Download VirtualBox:
+Download VirtualBox and the Arch ISO:
 - [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
-
-For the Arch ISO image, I recommend having qBtorrent (or any torrent downloader) and downloading the "Torrent for (date)" link.
 - [Arch ISO](https://archlinux.org/download/)
-- [qBitorrent](https://www.qbittorrent.org/download)
 
 For the Arch virtual machine:
 - Do not check "Enable EFI"
@@ -45,7 +42,7 @@ With timedatectl, you can check if your time and date are correct
 timedatectl
 ```
 
-If this is not the case, you can set the time zone
+If this is not the case, you can set the time zone. See the official wiki on the syntax for [TIMEZONE].
 ```bash
 timedatectl set-timezone [TIMEZONE]
 ```
@@ -94,7 +91,7 @@ You should get something like this.
 
 Now it's time to install the essential packages.
 ```bash
-pacstrap /mnt linux linux-firmware base base-devel grub virtualbox-guest-utils networkmanager
+pacstrap /mnt linux linux-firmware base base-devel grub virtualbox-guest-utils networkmanager sudo nano
 ```
 
 Now generate a fstab file
@@ -102,19 +99,12 @@ Now generate a fstab file
 genfstab -U /mnt >> /mnt/etc/fstab
 ```
 
-and with
-```bash
-cat !$
-```
-You can check everything looks good.
-
 The next step is to change the root of the system.
 ```bash
 arch-chroot /mnt
 ```
-You should see that the 'root' is not red anymore.
 
-Set the time zone
+Set the time zone. Replace Region/City with your region and city (It's the same as with timedatectl).
 ```bash
 ln -sf /usr/share/zoneinfo/Region/City /etc/localtime
 ```
@@ -129,7 +119,7 @@ Set a password for the root user.
 passwd
 ```
 
-Create your user with
+Create your user with:
 ```bash
 useradd -m username
 ```
@@ -144,12 +134,7 @@ Now add your user to the wheel group so sudo works
 usermod -aG wheel username
 ```
 
-Next, install sudo and nano
-```bash
-pacman -S sudo nano
-```
-
-And now edit with nano the file /etc/sudoers and uncomment this line:
+Now edit with nano the file /etc/sudoers and uncomment this line:
 ```bash
 # %wheel ALL=(ALL) ALL
 ```
@@ -183,12 +168,12 @@ and configure it with
 grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
-We are almost finished. Let us set a hostname (The name of your computer)
+We are almost finished. Let us set a hostname (The name you want for your computer)
 ```bash
 echo "hostname" > /etc/hostname
 ```
 
-And with this done, edit with nano /etc/hosts to get this
+And with this done, edit with nano /etc/hosts to get this. Replace hostname with your hostname.
 ```bash
 # Static table lookup for hostnames.
 # See hosts(5) for details.
