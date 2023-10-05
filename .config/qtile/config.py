@@ -82,7 +82,7 @@ keys = [
     # thunar
     Key([mod, "shift"], "Return", lazy.spawn("thunar"), desc="Launch thunar"),
     # screenshot
-    Key([mod], "p", lazy.spawn("xfce4-screenshooter -f -s 'Pictures/Screenshots/'"))
+    Key([mod], "p", lazy.spawn("xfce4-screenshooter -f -s 'Pictures/Screenshots/'")),
 ]
 
 groups = [Group(i) for i in ["󰈹 ", " ", " ", " "]]
