@@ -22,11 +22,11 @@ else
 fi
 
 # Rofi theme
-if ! [ -d "$HOME/Repositories" ]; then
-    mkdir $HOME/Repositories && cd $HOME/Repositories && git clone https://github.com/davatorium/rofi-themes.git && sudo cp rofi-themes/User\ Themes/onedark.rasi /usr/share/rofi/themes
+if ! [ -d "$HOME/Repos" ]; then
+    mkdir $HOME/Repos && cd $HOME/Repos && git clone https://github.com/davatorium/rofi-themes.git && sudo cp rofi-themes/User\ Themes/onedark.rasi /usr/share/rofi/themes
 else
-    if ! [ -d "$HOME/Repositories/rofi-themes" ]; then
-        cd $HOME/Repositories && git clone https://github.com/davatorium/rofi-themes.git && sudo cp rofi-themes/User\ Themes/onedark.rasi /usr/share/rofi/themes
+    if ! [ -d "$HOME/Repos/rofi-themes" ]; then
+        cd $HOME/Repos && git clone https://github.com/davatorium/rofi-themes.git && sudo cp rofi-themes/User\ Themes/onedark.rasi /usr/share/rofi/themes
     else
         echo "rofi-themes are already installed."
     fi
