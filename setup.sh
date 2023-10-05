@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# Create home directories
-cd && mkdir Downloads Documents Pictures Videos Repos
-
 # Ensure the system is up-to-date
 sudo pacman -Syu --noconfirm
 
