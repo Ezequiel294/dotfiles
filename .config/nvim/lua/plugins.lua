@@ -13,24 +13,35 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
 
+    -- Git
     'lewis6991/gitsigns.nvim',
+
+    -- Copilot
     'github/copilot.vim',
-    'goolord/alpha-nvim',
-    'windwp/nvim-autopairs',
+    
+    -- Lua Line
     'nvim-lualine/lualine.nvim',
+    
+    -- Colorschemes
     'navarasu/onedark.nvim',
     'ellisonleao/gruvbox.nvim',
+    
+    -- Treesitter
     { 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate' },
-    { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
+    
+    -- Indent Guides
+    { "lukas-reineke/indent-blankline.nvim", main = "ibl" },
 
-    -- telescope
+    -- Autopairs
+    { 'windwp/nvim-autopairs', event = "InsertEnter"},
+
+    -- Telescope
     {
-        'nvim-telescope/telescope.nvim',
-        tag = '0.1.3',
+        'nvim-telescope/telescope.nvim', tag = '0.1.3',
         dependencies = { 'nvim-lua/plenary.nvim' }
     },
 
-    -- lsp
+    -- Lsp
     {
         { 'VonHeikemen/lsp-zero.nvim', branch = 'v3.x' },
         'williamboman/mason.nvim',

@@ -15,4 +15,9 @@ require 'nvim-treesitter.configs'.setup {
         -- Instead of true it can also be a list of languages
         additional_vim_regex_highlighting = false,
     },
+
+    -- Autotag for html files
+    autotag = {
+        enable = true,
+      }
 }
