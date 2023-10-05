@@ -300,4 +300,4 @@ element active, element selected active {
 ## Wallpaper
 
 To set a wallpaper on qtile, you need something like feh or nitrogen. 
-Open nitrogen with rofi and select the directory using the preferences button in which your wallpapers are stored. In my case is .wallpapers, and the rest is very easy.
+Open nitrogen with rofi and select the directory using the preferences button in which your wallpapers are stored. In my case is Pictures/Wallpapers, and the rest is very easy.
