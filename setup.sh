@@ -1,10 +1,13 @@
 #!/bin/bash
 
+# Create home directories
+cd $HOME && mkdir Downloads Documents Pictures Videos Repos
+
 # Ensure the system is up-to-date
 sudo pacman -Syu --noconfirm
 
 # Install paru
-if ! pacman -Qi paru &> /dev/null; then
+if ! pacman -Qi paru & > /dev/null; then
     git clone https://aur.archlinux.org/paru.git && cd paru && makepkg -si && cd
 else
     echo "You already have paru installed."
@@ -22,14 +25,10 @@ else
 fi
 
 # Rofi theme
-if ! [ -d "$HOME/Repos" ]; then
-    mkdir $HOME/Repos && cd $HOME/Repos && git clone https://github.com/davatorium/rofi-themes.git && sudo cp rofi-themes/User\ Themes/onedark.rasi /usr/share/rofi/themes
+if ! [ -d "$HOME/Repos/rofi-themes" ]; then
+    cd $HOME/Repos && git clone https://github.com/davatorium/rofi-themes.git && sudo cp rofi-themes/User\ Themes/onedark.rasi /usr/share/rofi/themes
 else
-    if ! [ -d "$HOME/Repos/rofi-themes" ]; then
-        cd $HOME/Repos && git clone https://github.com/davatorium/rofi-themes.git && sudo cp rofi-themes/User\ Themes/onedark.rasi /usr/share/rofi/themes
-    else
-        echo "rofi-themes are already installed."
-    fi
+    echo "rofi-themes are already installed."
 fi
 
 # Ranger icons
