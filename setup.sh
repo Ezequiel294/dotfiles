@@ -35,6 +35,22 @@ else
     echo "Ranger icons are already installed"
 fi
 
+# SDDM autologin
+if ! [ -e /etc/sddm.conf.d/autologin.conf ]; then
+    read -p "Do you want to enable autologin? (y/n): " autologin_choice
+    if [[ $autologin_choice == "y" ]]; then
+        read -p "Enter the username: " user
+        read -p "Enter the session: " session
+        autologin_config="[Autologin]\nUser=$user\nSession=$session"
+        echo -e "$autologin_config" | sudo tee /etc/sddm.conf.d/autologin.conf > /dev/null
+        echo "Autologin configuration has been saved to /etc/sddm.conf.d/autologin.conf"
+    else
+        echo "Autologin is not enabled."
+    fi
+else
+    echo "Autologin is already set up."
+fi
+
 # Ask to reboot the system
 read -p "Do you want to reboot the PC? (y/n): " choice
 case "$choice" in
