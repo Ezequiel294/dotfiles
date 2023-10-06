@@ -21,6 +21,24 @@ else
     echo "You already have fish as your shell."
 fi
 
+# SDDM autologin
+if ! [ -e /etc/sddm.conf.d/autologin.conf ]; then
+    read -p "Do you want to enable autologin? (y/n): " autologin_choice
+    if [[ $autologin_choice == "y" ]]; then
+        mkdir /etc/sddm.conf.d
+        touch /etc/sddm.conf.d/autologin.conf
+        read -p "Enter the username: " user
+        read -p "Enter the session: " session
+        autologin_config="[Autologin]\nUser=$user\nSession=$session"
+        echo -e "$autologin_config" | sudo tee /etc/sddm.conf.d/autologin.conf > /dev/null
+        echo "Autologin configuration has been saved to /etc/sddm.conf.d/autologin.conf"
+    else
+        echo "Autologin is not enabled."
+    fi
+else
+    echo "Autologin is already set up."
+fi
+
 # Rofi theme
 if ! [ -d "$HOME/Repos/rofi-themes" ]; then
     cd $HOME/Repos && git clone https://github.com/davatorium/rofi-themes.git && sudo cp rofi-themes/User\ Themes/onedark.rasi /usr/share/rofi/themes
@@ -33,22 +51,6 @@ if ! [ -d "$HOME/.config/ranger/plugins" ]; then
     bash $HOME/.config/ranger/install-plugs.sh
 else
     echo "Ranger icons are already installed"
-fi
-
-# SDDM autologin
-if ! [ -e /etc/sddm.conf.d/autologin.conf ]; then
-    read -p "Do you want to enable autologin? (y/n): " autologin_choice
-    if [[ $autologin_choice == "y" ]]; then
-        read -p "Enter the username: " user
-        read -p "Enter the session: " session
-        autologin_config="[Autologin]\nUser=$user\nSession=$session"
-        echo -e "$autologin_config" | sudo tee /etc/sddm.conf.d/autologin.conf > /dev/null
-        echo "Autologin configuration has been saved to /etc/sddm.conf.d/autologin.conf"
-    else
-        echo "Autologin is not enabled."
-    fi
-else
-    echo "Autologin is already set up."
 fi
 
 # Ask to reboot the system
