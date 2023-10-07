@@ -14,9 +14,8 @@ fi
 cat .pkg | xargs paru -S --needed --noconfirm
 
 # Change shell to fish
-# Fish route /usr/bin/fish
 if [[ "$SHELL" != *fish* ]]; then
-    chsh
+    chsh -s /usr/bin/fish
 else
     echo "You already have fish as your shell."
 fi
@@ -25,8 +24,8 @@ fi
 if ! [ -e /etc/sddm.conf.d/autologin.conf ]; then
     read -p "Do you want to enable autologin? (y/n): " autologin_choice
     if [[ $autologin_choice == "y" ]]; then
-        mkdir /etc/sddm.conf.d
-        touch /etc/sddm.conf.d/autologin.conf
+        sudo mkdir /etc/sddm.conf.d
+        sudo touch /etc/sddm.conf.d/autologin.conf
         read -p "Enter the username: " user
         read -p "Enter the session: " session
         autologin_config="[Autologin]\nUser=$user\nSession=$session"
@@ -42,11 +41,11 @@ fi
 # Rofi theme
 if ! [ -d "$HOME/Repos/rofi-themes" ]; then
     cd $HOME/Repos/Utilities && git clone https://github.com/davatorium/rofi-themes.git && sudo cp rofi-themes/User\ Themes/onedark.rasi /usr/share/rofi/themes
+    sudo sed -i '29d' /usr/share/rofi/themes/onedark.rasi
+    sudo sed -i '84,87d' /usr/share/rofi/themes/onedark.rasi
 else
     echo "rofi-themes are already installed."
 fi
-sudo sed -i '29d' /usr/share/rofi/themes/onedark.rasi
-sudo sed -i '84,87d' /usr/share/rofi/themes/onedark.rasi
 
 # Ranger icons
 if ! [ -d "$HOME/.config/ranger/plugins" ]; then
