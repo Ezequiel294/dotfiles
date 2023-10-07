@@ -11,7 +11,7 @@ else
 fi
 
 # Install packages from .pkg file
-cat .pkg | xargs paru -S --needed --noconfirm
+cat .pkg | xargs paru -S --needed --noconfirm --quiet
 
 # Change shell to fish
 if [[ "$SHELL" != *fish* ]]; then
@@ -53,6 +53,9 @@ if ! [ -d "$HOME/.config/ranger/plugins" ]; then
 else
     echo "Ranger icons are already installed"
 fi
+
+# Nodejs package for neovim
+cd && npm install neovim
 
 # Ask to reboot the system
 read -p "Do you want to reboot the PC? (y/n): " choice
