@@ -133,7 +133,7 @@ colors = init_colors()
 
 
 def init_widgets_defaults():
-    return dict(font="Noto Sans",
+    return dict(font="FiraCode Nerd Font",
                 fontsize=12,
                 padding=2,
                 background=colors[1])
@@ -144,12 +144,12 @@ widget_defaults = init_widgets_defaults()
 screens = [
     Screen(
         top=bar.Bar([
-            widget.GroupBox(font="FontAwesome",
+            widget.GroupBox(
                             fontsize=16,
-                            margin_y=-1,
-                            margin_x=0,
-                            padding_y=6,
-                            padding_x=5,
+                            margin_y=2,
+                            margin_x=1,
+                            padding_y=5,
+                            padding_x=4,
                             borderwidth=0,
                             disable_drag=True,
                             active=colors[9],
@@ -167,7 +167,8 @@ screens = [
                     background=colors[1]
                     ),
             widget.CurrentLayout(
-                font="Noto Sans Bold",
+                font="FiraCode Nerd Font Bold",
+                fontsize=14,
                 foreground=colors[5],
                 background=colors[1]
             ),
@@ -177,23 +178,22 @@ screens = [
                 foreground=colors[2],
                 background=colors[1]
             ),
-            widget.WindowName(font="Noto Sans",
-                              fontsize=12,
+            widget.WindowName(
+                              fontsize=14,
                               foreground=colors[5],
                               background=colors[1],
                               ),
             widget.TextBox(
-                font="FontAwesome",
                 text="  ",
                 foreground=colors[3],
                 background=colors[1],
                 padding=0,
-                fontsize=16
+                fontsize=15,
             ),
             widget.Clock(
                 foreground=colors[5],
                 background=colors[1],
-                fontsize=12,
+                fontsize=13,
                 format="%Y-%m-%d %H:%M"
             ),
             widget.Sep(
@@ -202,11 +202,6 @@ screens = [
                 foreground=colors[2],
                 background=colors[1],
             ),
-            # widget.CheckUpdates(
-            #    distro="Arch",
-            #    display_format="󰮯 {updates}",
-            #    colour_have_updates=colors[6],
-            # ),
             widget.Systray(
                 background=colors[1],
                 icon_size=20,
