@@ -269,7 +269,7 @@ dotfiles checkout --force
 
 Execute the 'setup.sh' script that will automatically install all needed packages so that the configurations work correctly.
 ```bash
-bash setup.sh
+sudo -E bash setup.sh
 ```
 
 To update the .pkg file with all the packages installed in your system, you have to remove the .pkg file and regenerate it
@@ -281,20 +281,6 @@ pacman -Qqe | tr '\n' ' ' | sed 's/.$//' > .pkg
 To push the modified repository, you have to use dotfiles instead of git.
 ```bash
 dotfiles push -u origin main
-```
-
-## Rofi
-
-With this theme, rofi presents some minor problems.
-
-Delete the following lines in /usr/share/rofi/themes/onedark.rasi
-They are on line 29 and from 84 to 86
-```rasi
-font: "Knack Nerd Font 14";
-
-element active, element selected active {
-  text-color: @purple;
-}
 ```
 
 ## Wallpaper
