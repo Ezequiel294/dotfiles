@@ -5,7 +5,7 @@ sudo pacman -Syu --noconfirm
 
 # Install paru
 if ! pacman -Qi paru & > /dev/null; then
-    cd $HOME/Repos/Utilities && git clone https://aur.archlinux.org/paru.git && cd paru && makepkg -si && cd
+    cd $HOME/Repos/Utilities && git clone https://aur.archlinux.org/paru.git && cd $HOME/Repos/Utilities/paru && makepkg -si && cd
 else
     echo "You already have paru installed."
 fi
