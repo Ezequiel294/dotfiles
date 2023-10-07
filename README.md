@@ -269,7 +269,7 @@ dotfiles checkout --force
 
 Execute the 'setup.sh' script that will automatically install all needed packages so that the configurations work correctly.
 ```bash
-sudo -E bash setup.sh
+bash setup.sh
 ```
 
 To update the .pkg file with all the packages installed in your system, you have to remove the .pkg file and regenerate it
