@@ -45,6 +45,8 @@ if ! [ -d "$HOME/Repos/rofi-themes" ]; then
 else
     echo "rofi-themes are already installed."
 fi
+sudo sed -i '29d' /usr/share/rofi/themes/onedark.rasi
+sudo sed -i '84,87d' /usr/share/rofi/themes/onedark.rasi
 
 # Ranger icons
 if ! [ -d "$HOME/.config/ranger/plugins" ]; then
