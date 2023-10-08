@@ -2,6 +2,7 @@ vim.g.mapleader = ' '
 
 -- file explorer
 vim.keymap.set('n', '<leader>fe', vim.cmd.Ex)
+vim.keymap.set('n', '<C-v>', vim.cmd.vsp)
 
 -- Exit insert mode
 vim.keymap.set("i", "jk", "<ESC>")

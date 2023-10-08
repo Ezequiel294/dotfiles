@@ -15,6 +15,7 @@ require("lazy").setup({
 
     -- Git
     'lewis6991/gitsigns.nvim',
+    'tpope/vim-fugitive',
 
     -- Copilot
     'github/copilot.vim',
@@ -23,6 +24,7 @@ require("lazy").setup({
     'nvim-lualine/lualine.nvim',
     
     -- Colorschemes
+    { 'rose-pine/neovim', name = 'rose-pine' },
     'navarasu/onedark.nvim',
     'ellisonleao/gruvbox.nvim',
     

@@ -1,3 +1,13 @@
-require('onedark').setup {}
-require('gruvbox').setup {}
-vim.cmd('colorscheme gruvbox')
+require('onedark').setup()
+require('gruvbox').setup()
+require('rose-pine').setup()
+
+function ColorMyPenscils(color)
+    color = color or 'rose-pine'
+    vim.cmd.colorscheme(color)
+
+    vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
+    vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })
+end
+
+ColorMyPenscils()
