@@ -28,9 +28,6 @@ require("lazy").setup({
     
     -- Treesitter
     { 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate' },
-    
-    -- Indent Guides
-    { "lukas-reineke/indent-blankline.nvim", main = "ibl" },
 
     -- Autopairs
     { 'windwp/nvim-autopairs', event = "InsertEnter"},
