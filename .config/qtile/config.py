@@ -106,9 +106,9 @@ def init_layout_theme():
 layout_theme = init_layout_theme()
 
 layouts = [
-    layout.Max(),
     layout.MonadTall(**layout_theme),
     layout.MonadWide(**layout_theme),
+    layout.Max(),
 ]
 
 # COLORS FOR THE BAR
