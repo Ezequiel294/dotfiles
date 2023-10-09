@@ -19,15 +19,15 @@ require("lazy").setup({
 
     -- Copilot
     'github/copilot.vim',
-    
+
     -- Lua Line
     'nvim-lualine/lualine.nvim',
-    
+
     -- Colorschemes
     { 'rose-pine/neovim', name = 'rose-pine' },
     'navarasu/onedark.nvim',
     'ellisonleao/gruvbox.nvim',
-    
+
     -- Treesitter
     { 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate' },
 
