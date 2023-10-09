@@ -33,39 +33,39 @@ colors:
 
 font:
   bold:
-    family: FiraCode Nerd Font
+    family: JetBrainsMono Nerd Font
     style: Bold
+    # family: FiraCode Nerd Font
     # family: UbuntuMono Nerd Font
     # family: mononoki Nerd Font
     # family: agave Nerd Font
     # family: Caskaydia Cove Nerd Font
-    # family: JetBrains Mono Nerd Font
     # family: Hurmit Nerd Font Mono
     # family: DaddyTimeMono Nerd Font
     # family: Iosevka NF
     # family: Hack NF
     # family: SpaceMono NF
   italic:
-    family: FiraCode Nerd Font
+    family: JetBrainsMono Nerd Font
     style: Italic
+    # family: FiraCode Nerd Font
     # family: UbuntuMono Nerd Font
     # family: mononoki Nerd Font
     # family: agave Nerd Font
     # family: Caskaydia Cove Nerd Font
-    # family: JetBrains Mono Nerd Font
     # family: Hurmit Nerd Font Mono
     # family: DaddyTimeMono Nerd Font
     # family: Iosevka NF
     # family: Hack NF
     # family: SpaceMono NF
   normal:
-    family: FiraCode Nerd Font
+    family: JetBrainsMono Nerd Font
     style: Regular
+    # family: FiraCode Nerd Font
     # family: UbuntuMono Nerd Font
     # family: mononoki Nerd Font
     # family: agave Nerd Font
     # family: Caskaydia Cove Nerd Font
-    # family: JetBrains Mono Nerd Font
     # family: Hurmit Nerd Font Mono
     # family: DaddyTimeMono Nerd Font
     # family: Iosevka NF
