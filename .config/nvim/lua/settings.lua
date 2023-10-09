@@ -30,13 +30,9 @@ vim.opt.splitright = true
 
 vim.opt.clipboard = 'unnamedplus'
 
-vim.opt.background = 'dark'
-
 vim.opt.updatetime = 50
 
 vim.opt.signcolumn = 'yes'
-
-vim.opt.hlsearch = true
 
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
