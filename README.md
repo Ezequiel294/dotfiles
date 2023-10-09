@@ -1,5 +1,6 @@
-![Desktop](https://github.com/Ezequiel294/dotfiles/assets/119618678/da0e19c7-cfa4-4a3f-9916-88b41bd33f6c)
-![setup](https://github.com/Ezequiel294/dotfiles/assets/119618678/02377951-d85d-488f-993e-726ce905a4da)
+![desktop](https://github.com/Ezequiel294/dotfiles/assets/119618678/47044bbe-df2c-44d2-b19e-0d1ff8c85d06)
+![terminal](https://github.com/Ezequiel294/dotfiles/assets/119618678/a5c75e53-2d13-4a57-bf8f-121bc8dc0331)
+![neovim](https://github.com/Ezequiel294/dotfiles/assets/119618678/3da2813b-d651-4725-b967-e5feaa8f1c8a)
 
 # Table of Contents
 
@@ -208,7 +209,7 @@ You won't have internet. This is because you have to enable and start NetworkMan
 sudo systemctl enable NetworkManager
 ```
 ```bash
-sudo systemctl start NetworkManager.service
+sudo systemctl start NetworkManager
 ```
 
 Now you should have internet.
