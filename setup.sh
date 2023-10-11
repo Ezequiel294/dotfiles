@@ -47,6 +47,9 @@ else
     echo "rofi-themes are already installed."
 fi
 
+# Oh my fish
+cd && curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
+
 # Ranger icons
 if ! [ -d "$HOME/.config/ranger/plugins" ]; then
     bash $HOME/.config/ranger/install-plugs.sh
@@ -55,7 +58,7 @@ else
 fi
 
 # Nodejs package for neovim
-cd && npm install neovim
+npm install neovim
 
 # Ask to reboot the system
 read -p "Do you want to reboot the PC? (y/n): " choice
