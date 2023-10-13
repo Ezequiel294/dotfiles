@@ -1,8 +1,4 @@
-![desktop](https://github.com/Ezequiel294/dotfiles/assets/119618678/47044bbe-df2c-44d2-b19e-0d1ff8c85d06)
-![terminal](https://github.com/Ezequiel294/dotfiles/assets/119618678/a5c75e53-2d13-4a57-bf8f-121bc8dc0331)
-![neovim](https://github.com/Ezequiel294/dotfiles/assets/119618678/3da2813b-d651-4725-b967-e5feaa8f1c8a)
-
-# Table of Contents
+# Index
 
 - [Overview](#overview)
 - [Arch Installation in VirtualBox](#arch-installation-in-virtualbox)
@@ -269,6 +265,7 @@ dotfiles checkout --force
 ```
 
 Execute the 'setup.sh' script that will automatically install all needed packages so that the configurations work correctly.
+Note that you will be asked several times for things like the password or wether or not you want to perform a certain action. Also, sometimes you will be asked which of the available packages you want to install. In those cases, I recommend the default one. If you want to have autologin, make sure you type your username and session correctly (at the moment, only 'qtile' works as session). It's highly recommended to reboot after the script has finished.
 ```bash
 bash setup.sh
 ```

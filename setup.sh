@@ -56,7 +56,7 @@ else
 fi
 
 # Nodejs package for neovim
-npm install neovim
+cd && sudo npm install -g neovim
 
 # Ask to reboot the system
 read -p "Do you want to reboot the PC? (y/n): " choice
