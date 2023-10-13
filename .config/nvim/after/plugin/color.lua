@@ -4,6 +4,7 @@ require('rose-pine').setup()
 
 function ColorMyPencils(color, transparent)
     color = color or 'rose-pine'
+    transparent = transparent or true
     vim.cmd.colorscheme(color)
 
     if transparent then
