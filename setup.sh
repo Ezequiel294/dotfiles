@@ -16,6 +16,7 @@ cat .pkg | xargs paru -S --needed --noconfirm --quiet
 # Change shell to fish
 if [[ "$SHELL" != *fish* ]]; then
     chsh -s /usr/bin/fish
+    starship preset nerd-font-symbols -o ~/.config/starship.toml
 else
     echo "You already have fish as your shell."
 fi
@@ -46,9 +47,6 @@ if ! [ -d "$HOME/Repos/rofi-themes" ]; then
 else
     echo "rofi-themes are already installed."
 fi
-
-# Oh my fish
-cd && curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
 
 # Ranger icons
 if ! [ -d "$HOME/.config/ranger/plugins" ]; then
