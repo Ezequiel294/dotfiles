@@ -255,16 +255,15 @@ git --git-dir $HOME/.dotfiles/ --work-tree $HOME checkout --force
 This long command is due to the special characteristic of this repo being a bare clone.
 But because the .bashrc was replaced by the checkout with a new .bashrc, an alias was set. Now, dotfiles stands for 'git --git-dir $HOME/.dotfiles/ --work-tree $HOME'. So now, to execute git commands for this repo, you use dotfiles (for example: dotfiles pull).
 
-Now you can reboot so that the changes in the .bashrc file take effect.
-```bash
-reboot
-```
-
 Execute the 'setup.sh' script that will automatically install all needed packages so that the configurations work correctly.
 Note that you will be asked several times for things like the password or whether or not you want to perform a specific action. Also, sometimes, you will be asked which of the available packages you want to install. In those cases, I recommend the default one. If you want to have autologin, make sure you type your username and session correctly (at the moment, only 'qtile' works as session).
-It's highly recommended to reboot after the script has finished.
 ```bash
 bash setup.sh
+```
+
+It's highly recommended to reboot after the script has finished if you didn't accept the prompt from the script.
+```bash
+reboot
 ```
 
 To set a wallpaper on qtile, you need something like feh or nitrogen. 
