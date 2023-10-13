@@ -3,8 +3,6 @@
 - [Overview](#overview)
 - [Arch Installation in VirtualBox](#arch-installation-in-virtualbox)
 - [Configuration](#configuration)
-  - [Rofi](#rofi)
-  - [Wallpaper](#wallpaper)
 
 # Overview
 
@@ -215,7 +213,7 @@ With that out of the way, we can install our graphical interface.
 sudo pacman -S xorg xorg-xinit qtile sddm alacritty git
 ```
 
-Before rebooting, you have to enable sddm and the VirtualBox guest additions
+You have to enable sddm and the VirtualBox guest additions
 ```bash
 sudo systemctl enable vboxservice sddm
 ```
@@ -238,37 +236,39 @@ These are the basic Qtile key mappings:
 | **mod + k**          | next window                 |
 | **mod + j**          | previous window             |
 | **mod + w**          | kill window                 |
-| **mod + [123456789]** | go to workspace [123456789]|
+| **mod + [123456789]**| go to workspace [123456789]|
 | **mod + ctrl + r**   | restart qtile               |
 | **mod + ctrl + q**   | logout                      |
 
 # Configuration
 
-To start the configuration process, let's start by cloning my dotfiles repo with a bare clone. 
+To start the configuration process, let's start by cloning my dotfiles repo with a bare clone.
 ```bash
 git clone --bare https://github.com/Ezequiel294/dotfiles .dotfiles
 ```
 
-Now, you will need to edit your .bashrc file. Add the following line where all the aliases are set:
+To put all the files where they should go, execute the following command.
 ```bash
-alias dotfiles="git --git-dir $HOME/.dotfiles/ --work-tree $HOME"
+git --git-dir $HOME/.dotfiles/ --work-tree $HOME checkout --force
 ```
 
-Now reboot so that the changes in the .bashrc file take effect.
+This long command is due to the special characteristic of this repo being a bare clone.
+But because the .bashrc was replaced by the checkout with a new .bashrc, an alias was set. Now, dotfiles stands for 'git --git-dir $HOME/.dotfiles/ --work-tree $HOME'. So now, to execute git commands for this repo, you use dotfiles (for example: dotfiles pull).
+
+Now you can reboot so that the changes in the .bashrc file take effect.
 ```bash
 reboot
 ```
 
-Once back on, it's time to 'check out' the .dotfiles repo we cloned before. The --force is to overwrite the current config files that are the default ones.
-```bash
-dotfiles checkout --force
-```
-
 Execute the 'setup.sh' script that will automatically install all needed packages so that the configurations work correctly.
-Note that you will be asked several times for things like the password or wether or not you want to perform a certain action. Also, sometimes you will be asked which of the available packages you want to install. In those cases, I recommend the default one. If you want to have autologin, make sure you type your username and session correctly (at the moment, only 'qtile' works as session). It's highly recommended to reboot after the script has finished.
+Note that you will be asked several times for things like the password or whether or not you want to perform a specific action. Also, sometimes, you will be asked which of the available packages you want to install. In those cases, I recommend the default one. If you want to have autologin, make sure you type your username and session correctly (at the moment, only 'qtile' works as session).
+It's highly recommended to reboot after the script has finished.
 ```bash
 bash setup.sh
 ```
+
+To set a wallpaper on qtile, you need something like feh or nitrogen. 
+Open nitrogen with rofi and select the directory using the preferences button in which your wallpapers are stored. In my case is Pictures/Wallpapers, and the rest is very easy.
 
 To update the .pkg file with all the packages installed in your system, you have to remove the .pkg file and regenerate it
 ```bash
@@ -281,7 +281,3 @@ To push the modified repository, you have to use dotfiles instead of git.
 dotfiles push -u origin main
 ```
 
-## Wallpaper
-
-To set a wallpaper on qtile, you need something like feh or nitrogen. 
-Open nitrogen with rofi and select the directory using the preferences button in which your wallpapers are stored. In my case is Pictures/Wallpapers, and the rest is very easy.
