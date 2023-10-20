@@ -1,3 +1,7 @@
+![desktop](https://github.com/Ezequiel294/dotfiles/assets/119618678/05ca8475-864e-4c00-836a-b2ed0ef2751e)
+![terminal](https://github.com/Ezequiel294/dotfiles/assets/119618678/23805741-d4bb-47d2-ba11-2ab8ba3c9faa)
+![neovim](https://github.com/Ezequiel294/dotfiles/assets/119618678/fbcdd7e5-e71a-4c4a-bb39-24582758c433)
+
 # Index
 
 - [Overview](#overview)
