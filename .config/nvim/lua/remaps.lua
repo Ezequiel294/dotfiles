@@ -3,6 +3,7 @@ vim.g.mapleader = ' '
 -- file explorer
 vim.keymap.set('n', '<leader>fe', vim.cmd.Ex)
 vim.keymap.set('n', '<leader>v', vim.cmd.vsp)
+vim.keymap.set('n', '<leader>h', vim.cmd.split)
 
 -- Exit insert mode
 vim.keymap.set("i", "jk", "<ESC>")
@@ -30,4 +31,6 @@ vim.keymap.set("n", "<M-l>", "<C-w>l")
 
 -- TAB cicles buffers
 vim.keymap.set("n", "<TAB>", ":bnext<CR>")
-vim.keymap.set("n", "<S-TAB>", ":bprevious<CR>")
+
+vim.keymap.set("n", "<leader>cb", ":bd<CR>")
+vim.keymap.set("n", "<leader>db", ":bw<CR>")

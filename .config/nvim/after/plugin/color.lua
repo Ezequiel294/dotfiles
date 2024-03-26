@@ -12,4 +12,4 @@ function ColorMyPencils(color, transparent)
     end
 end
 
-ColorMyPencils('rose-pine', true)
+ColorMyPencils('catppuccin', true)

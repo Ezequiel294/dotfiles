@@ -25,6 +25,7 @@ require("lazy").setup({
 
     -- Colorschemes
     { 'rose-pine/neovim', name = 'rose-pine' },
+    { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
     'navarasu/onedark.nvim',
     'ellisonleao/gruvbox.nvim',
 
@@ -33,6 +34,12 @@ require("lazy").setup({
 
     -- Autopairs
     { 'windwp/nvim-autopairs', event = "InsertEnter"},
+
+    -- Nvim Tree
+    {
+        'nvim-tree/nvim-tree.lua',
+        dependencies = { 'nvim-tree/nvim-web-devicons' }
+    },
 
     -- Telescope
     {
