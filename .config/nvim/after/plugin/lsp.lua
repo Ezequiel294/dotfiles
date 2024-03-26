@@ -8,6 +8,8 @@ require('mason').setup()
 require('mason-lspconfig').setup {
     vim.keymap.set('n', '<leader>i', vim.lsp.buf.hover, {}),
     vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, {}),
+    vim.keymap.set('n', '<leader>fa', vim.lsp.buf.format, {}),
+
     ensure_installed = {
         'pylsp',
         'clangd',
