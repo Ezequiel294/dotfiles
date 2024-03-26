@@ -1,24 +1,24 @@
 local lsp_zero = require('lsp-zero')
 
 lsp_zero.on_attach(function(client, bufnr)
-  -- see :help lsp-zero-keybindings
-  -- to learn the available actions
-  lsp_zero.default_keymaps({buffer = bufnr})
+    lsp_zero.default_keymaps({ buffer = bufnr })
 end)
 
 require('mason').setup()
-require('mason-lspconfig').setup{
-  ensure_installed = {
-            'pylsp',
-            'clangd',
-            'bashls',
-            'lua_ls',
-            'tsserver',
-            'jsonls',
-            'cssls',
-            'html',
-  },
-  handlers = {
-    lsp_zero.default_setup,
-  },
+require('mason-lspconfig').setup {
+    vim.keymap.set('n', '<leader>i', vim.lsp.buf.hover, {}),
+    vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, {}),
+    ensure_installed = {
+        'pylsp',
+        'clangd',
+        'bashls',
+        'lua_ls',
+        'tsserver',
+        'jsonls',
+        'cssls',
+        'html',
+    },
+    handlers = {
+        lsp_zero.default_setup,
+    },
 }

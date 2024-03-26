@@ -13,27 +13,30 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
 
-    -- Git
-    'lewis6991/gitsigns.nvim',
-    'tpope/vim-fugitive',
-
     -- Copilot
     'github/copilot.vim',
 
     -- Lua Line
     'nvim-lualine/lualine.nvim',
 
-    -- Colorschemes
-    { 'rose-pine/neovim', name = 'rose-pine' },
-    { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
-    'navarasu/onedark.nvim',
-    'ellisonleao/gruvbox.nvim',
+    -- Telescope UI Select
+    'nvim-telescope/telescope-ui-select.nvim',
+
+    -- Git
+    'lewis6991/gitsigns.nvim',
+    'tpope/vim-fugitive',
 
     -- Treesitter
-    { 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate' },
+    {
+        'nvim-treesitter/nvim-treesitter',
+        build = ':TSUpdate'
+    },
 
     -- Autopairs
-    { 'windwp/nvim-autopairs', event = "InsertEnter"},
+    {
+        'windwp/nvim-autopairs',
+        event = "InsertEnter"
+    },
 
     -- Nvim Tree
     {
@@ -43,18 +46,25 @@ require("lazy").setup({
 
     -- Telescope
     {
-        'nvim-telescope/telescope.nvim', tag = '0.1.3',
+        'nvim-telescope/telescope.nvim',
+        tag = '0.1.3',
         dependencies = { 'nvim-lua/plenary.nvim' }
     },
 
+    -- Colorschemes
+    'navarasu/onedark.nvim',
+    'ellisonleao/gruvbox.nvim',
+    { 'rose-pine/neovim', name = 'rose-pine' },
+    { "catppuccin/nvim",  name = "catppuccin", priority = 1000 },
+
     -- Lsp
     {
-        { 'VonHeikemen/lsp-zero.nvim', branch = 'v3.x' },
         'williamboman/mason.nvim',
         'williamboman/mason-lspconfig.nvim',
         'neovim/nvim-lspconfig',
         'hrsh7th/cmp-nvim-lsp',
-        'hrsh7th/nvim-cmp',
         'L3MON4D3/LuaSnip',
+        'hrsh7th/nvim-cmp',
+        { 'VonHeikemen/lsp-zero.nvim', branch = 'v3.x' },
     },
 })
