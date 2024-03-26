@@ -57,14 +57,22 @@ require("lazy").setup({
     { 'rose-pine/neovim', name = 'rose-pine' },
     { "catppuccin/nvim",  name = "catppuccin", priority = 1000 },
 
+    -- Completions
+    'hrsh7th/nvim-cmp',
+    'hrsh7th/cmp-nvim-lsp',
+    {
+        'L3MON4D3/LuaSnip',
+        dependencies = {
+            'rafamadriz/friendly-snippets',
+            'saadparwaiz1/cmp_luasnip',
+        }
+    },
+
     -- Lsp
     {
         'williamboman/mason.nvim',
         'williamboman/mason-lspconfig.nvim',
         'neovim/nvim-lspconfig',
-        'hrsh7th/cmp-nvim-lsp',
-        'L3MON4D3/LuaSnip',
-        'hrsh7th/nvim-cmp',
         { 'VonHeikemen/lsp-zero.nvim', branch = 'v3.x' },
     },
 })
