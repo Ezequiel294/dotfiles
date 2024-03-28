@@ -1,7 +1,3 @@
-require('onedark').setup()
-require('gruvbox').setup()
-require('rose-pine').setup()
-
 function ColorMyPencils(color, transparent)
     color = color or 'catppuccin'
     vim.cmd.colorscheme(color)
@@ -12,4 +8,4 @@ function ColorMyPencils(color, transparent)
     end
 end
 
-ColorMyPencils('catppuccin', false)
+ColorMyPencils('catppuccin', true)
