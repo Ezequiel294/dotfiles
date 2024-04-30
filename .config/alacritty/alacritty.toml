@@ -98,8 +98,8 @@ color = "#fab387"
 index = 17
 color = "#f5e0dc"
 
-#[window]
-#opacity = 0.9
+#   [window]
+#   opacity = 0.9
 
 #    [colors.bright]
 #    black = "0x282a40"
