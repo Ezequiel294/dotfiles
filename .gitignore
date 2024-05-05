@@ -4,16 +4,13 @@
 # except for these files...
 !README.md
 !LICENSE
-!setup.sh
 !Repos
 !Downloads
 !Pictures
 !Videos
 !Documents
+!Scripts
 !.config
 !.bashrc
-!.xprofile
-!.wallpapers
-!.gtkrc-2.0
-!.pkg
+!.gitconfig
 !.gitignore

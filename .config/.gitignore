@@ -2,13 +2,10 @@
 
 !alacritty
 !fish
-!htop
 !neofetch
 !nvim
-!qtile
 !ranger
-!rofi
 !bat
-!gtk-2.0
-!gtk-3.0
+!btop
+!lazygit
 !.gitignore
