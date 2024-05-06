@@ -50,7 +50,7 @@ mkfs.format --options /dev/partition
 
 8. Mount the partitions (root partition should be mounted to /mnt)
 ```bash
-mount --otions /devpartition route
+mount --options /dev/partition route
 ```
 
 9. Check you have internet
@@ -215,9 +215,8 @@ makepkg -si
 cat pkg.txt | xargs paru -S --needed
 ```
 
-To update the pkg.txt file with all the packages installed in your system, you have to remove the pkg.txt file and regenerate it
+To update the pkg.txt file with all the packages installed in your system
 ```bash
-rm pkg.txt
 pacman -Qqe | tr '\n' ' ' | sed 's/.$//' > pkg.txt
 ```
 
