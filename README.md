@@ -212,17 +212,22 @@ makepkg -si
 
 42. Install the rest of my packages
 ```bash
-cat pkg.txt | xargs paru -S --needed
+bash $HOME/Scripts/packages/install_pkg.sh
 ```
 
-43. Restart your system
+43. Install ranger icons
+```bash
+bash $HOME/.config/ranger/install-plugs.sh
+```
+
+44. Restart your system
 ```bash
 reboot
 ```
 
 To update the pkg.txt file with all the packages installed in your system
 ```bash
-pacman -Qqe | tr '\n' ' ' | sed 's/.$//' > pkg.txt
+bash $HOME/Scripts/packages/update_pkg.sh
 ```
 
 To push the modification, you have to use dotfiles instead of git.
