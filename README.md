@@ -215,6 +215,11 @@ makepkg -si
 cat pkg.txt | xargs paru -S --needed
 ```
 
+43. Restart your system
+```bash
+reboot
+```
+
 To update the pkg.txt file with all the packages installed in your system
 ```bash
 pacman -Qqe | tr '\n' ' ' | sed 's/.$//' > pkg.txt
