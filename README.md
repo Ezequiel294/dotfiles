@@ -1,286 +1,223 @@
-![desktop](https://github.com/Ezequiel294/dotfiles/assets/119618678/05ca8475-864e-4c00-836a-b2ed0ef2751e)
-![terminal](https://github.com/Ezequiel294/dotfiles/assets/119618678/23805741-d4bb-47d2-ba11-2ab8ba3c9faa)
-![neovim](https://github.com/Ezequiel294/dotfiles/assets/119618678/fbcdd7e5-e71a-4c4a-bb39-24582758c433)
-
 # Index
 
 - [Overview](#overview)
-- [Arch Installation in VirtualBox](#arch-installation-in-virtualbox)
+- [Requirements](#list-of-requirements)
+- [Arch Installation](#arch-installation)
 - [Configuration](#configuration)
 
 # Overview
 
-This is a guide to installing and configuring my Arch setup. I will assume that you are
-comfortable with Linux-based operating systems, virtual machines, and command line interfaces.
+The following instructions are a guide to installing and configuring Arch. It is necessary to know Linux-based operating systems, virtual machines, and command line interfaces before following these instructions.
 
-# Arch Installation in VirtualBox
+# List of Requirements
+- Internet connection
+- 64-bit computer Using UEFI
+- Keyboard and Mouse
+- At least 2GB of available RAM Memory
+- At least 15GB of available storage
 
-Download VirtualBox and the Arch ISO:
-- [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
+# Arch Installation
+
+1. Download the Arch ISO and burn it to a USB memory:
 - [Arch ISO](https://archlinux.org/download/)
 
-For the Arch virtual machine:
-- Do not check "Enable EFI"
-- Assign all the video memory possible
-- At least 2GB of RAM
-- More than 15GB of storage
+2. Boot to the USB memory
+
+3. Select the first boot option
 
 Now we can start with the Arch Installation; I recommend opening the official guide to help.
 - [Arch Installation Guide](https://wiki.archlinux.org/title/Installation_guide)
 
-Start the VM, select the first boot option, and after many "OK" you should get to this:
-
-![image](https://github.com/Ezequiel294/Arch-Config/assets/119618678/19a71d73-35e0-4f36-bffd-467287bc1954)
-
-This is the terminal that will help you get Arch installed. At this point, your root is the Arch ISO.
-
-First, check you have internet.
+4. Change the terminal font if it is too small
 ```bash
-ping google.com
+setfont ter-132b
 ```
 
-With timedatectl, you can check if your time and date are correct
+5. Display block devices
 ```bash
-timedatectl
+lsblk
 ```
 
-If this is not the case, you can set the time zone. See the official wiki on the syntax for [TIMEZONE].
-```bash
-timedatectl set-timezone [TIMEZONE]
-```
-
-Now it's time to create the disk partitions
+6. Make the disk partitions
 ```bash
 cfdisk
 ```
 
-Select "dos" if you are indeed in a VM.
-Here you make your partitions. You NEED an EFI and a root partition. Manage your home and swap as you wish.
-
-After making the partitions, they have to be formatted. The first partition will be for the EFI
+7. Format the partitions with the following command
 ```bash
-mkfs.vfat -F 32 /dev/sda1
-```
-The second one is for the root
-```bash
-mkfs.ext4 /dev/sda2
-```
-(Home partition uses the same format)
-
-And the third one for the swap
-```bash
-mkswap /dev/sda3
+mkfs.*format* *options* /dev/*partition*
 ```
 
-Now we have to mount the partitions
+8. Mount the partitions (root partition should be mounted to /mnt)
 ```bash
-mount /dev/sda2 /mnt
-```
-```bash
-mount --mkdir /dev/sda1 /mnt/boot
-```
-```bash
-swapon /dev/sda3
+mount *otions* /dev*partition* *route*
 ```
 
-With that done, if you do a
+9. Check you have internet
 ```bash
-lsblk
+ping google.com
 ```
-You should get something like this.
-
-![image](https://github.com/Ezequiel294/Arch-Config/assets/119618678/3368f925-1295-4400-a608-512d41343d57)
-
-Now it's time to install the essential packages.
+If not, use command
 ```bash
-pacstrap /mnt linux linux-firmware base base-devel grub virtualbox-guest-utils networkmanager sudo nano
+iwctl
 ```
 
-Now generate a fstab file
+10. Install kernel and base package
+```bash
+pacstrap -K /mnt linux linux-firmware base
+```
+
+11. Generate the fstab file
 ```bash
 genfstab -U /mnt >> /mnt/etc/fstab
 ```
 
-The next step is to change the root of the system.
+12. Change root to your system
 ```bash
 arch-chroot /mnt
 ```
 
-Set the time zone. Replace Region/City with your region and city (It's the same as with timedatectl).
+13. Set the time zone
 ```bash
-ln -sf /usr/share/zoneinfo/Region/City /etc/localtime
+ln -sf /usr/share/zoneinfo/*Region/City* /etc/localtime
 ```
 
-Run hwclock to generate /etc/adjtime
+14. Run hwclock to generate /etc/adjtime
 ```bash
 hwclock --systohc
 ```
 
-Set a password for the root user.
+15. Set the root user password
 ```bash
 passwd
 ```
 
-Create your user with:
+16. Create your user
 ```bash
-useradd -m username
+useradd -m -G wheel *username*
 ```
 
-and add a password for your user
+17. Create a password for your user
 ```bash
-passwd username
+passwd *username*
 ```
 
-Now add your user to the wheel group so sudo works
+18. Install essential packages
 ```bash
-usermod -aG wheel username
+pacman -S base-devel grub efibootmgr os-prober intel-ucode nvidia mesa vulkan-intel networkmanager sudo alacritty git neovim
 ```
 
-Now edit with nano the file /etc/sudoers and uncomment this line:
-```bash
+19. Uncoment the following line in /etc/sudoers to make users in the wheel group use sudo
 # %wheel ALL=(ALL) ALL
-```
 
-Edit with nano /etc/locale.gen and uncomment 
-```bash
+20. Uncoment in /etc/locale.gen the locales you want to have
 #en_US.UTF-8 UTF-8
-```
 
-Generate the locales by running.
+21. Generate the locales
 ```bash
 locale-gen
 ```
 
-Create the locale.conf file
+22. Create the locale.conf file
 ```bash
 touch /etc/locale.conf
 ```
 
-And set the LANG variable using nano:
-```bash
+23. Ser the language
 LANG=en_US.UTF-8
+
+24. Install grub
+```bash
+grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
 ```
 
-Now let us configure the boot loader, which is Grub
-```bash
-grub-install /dev/sda
-```
-and configure it with
+25. Make the grub configuration
 ```bash
 grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
-We are almost finished. Let us set a hostname (The name you want for your computer)
+26. Set a hostname
 ```bash
-echo "hostname" > /etc/hostname
+echo "*hostname*" > /etc/hostname
 ```
 
-And with this done, edit with nano /etc/hosts to get this. Replace hostname with your hostname.
-```bash
-# Static table lookup for hostnames.
-# See hosts(5) for details.
-
+27. Make network configuration by editing your /etc/hosts file. A basic setup is
 127.0.0.1    localhost
 ::1          localhost
-127.0.0.1    hostname.localhost hostname
+127.0.0.1    *hostname*.localhost *hostname*
+
+28. Enable networkmanager
+```bash
+systemctl enable NetworkManager
 ```
 
-To finish, write
+29. Exit your system
 ```bash
 exit
 ```
-to go back to the ISO root and then
+30. Shutdown your computer
 ```bash
 shutdown now
 ```
 
-Now, to be sure, right-click on your Arch VM machine, go to "settings," then to "system," move the "Hard Disk" to the top of the priorities and then go to "storage," and right-click on the blue disk with the name of the Arch ISO and click on "Remove Attachment." Finish by clicking "OK" to save changes.
+31. Remove the USB memory
 
-When you start your Arch system again, you will find yourself in the grub. Just click "enter" on the fists option. The next step is to log in to your user, and congratulations, this is your system.
+32. Power your computer
 
-You will notice that if you do a 
-```bash
-ping google.com
-```
-You won't have internet. This is because you have to enable and start NetworkManager
-```bash
-sudo systemctl enable NetworkManager
-```
-```bash
-sudo systemctl start NetworkManager
-```
+33. Enter your UEFI
 
-Now you should have internet.
+34. Change the boot order to have the disk with Arch Linux first
 
-With that out of the way, we can install our graphical interface.
+35. Select the first boot option in Grub
+
+36. Log in with your user
+
+37. Install KDE Plasma desktop envirorment
 ```bash
-sudo pacman -S xorg xorg-xinit qtile sddm alacritty git
+sudo pacman -S plasma-meta
 ```
 
-You have to enable sddm and the VirtualBox guest additions
+38. Enable the login manager
 ```bash
-sudo systemctl enable vboxservice sddm
+sudo systemctl enable sddm
 ```
 
-Now we can reboot
+39. Restart your computer
 ```bash
 reboot
 ```
 
-Now, you will see the login screen of SDDM.
-In the top left corner, it says "Qtile Wayland." Change it to just "Qtile".
-
-After logging in sddm, you will get to qtile, your desktop environment. 
-
-These are the basic Qtile key mappings:
-
-| Key                  | Action                      |
-| -------------------- | --------------------------- |
-| **mod + return**     | launch terminal             |
-| **mod + k**          | next window                 |
-| **mod + j**          | previous window             |
-| **mod + w**          | kill window                 |
-| **mod + [123456789]**| go to workspace [123456789]|
-| **mod + ctrl + r**   | restart qtile               |
-| **mod + ctrl + q**   | logout                      |
-
 # Configuration
 
-To start the configuration process, let's start by cloning my dotfiles repo with a bare clone.
+40. Clone this repo in your user directory
 ```bash
 git clone --bare https://github.com/Ezequiel294/dotfiles .dotfiles
 ```
 
-To put all the files where they should go, execute the following command.
+41. Execute the following command.
 ```bash
 git --git-dir $HOME/.dotfiles/ --work-tree $HOME checkout --force
 ```
 
-This long command is due to the special characteristic of this repo being a bare clone.
-But because the .bashrc was replaced by the checkout with a new .bashrc, an alias was set. Now, dotfiles stands for 'git --git-dir $HOME/.dotfiles/ --work-tree $HOME'. So now, to execute git commands for this repo, you use dotfiles (for example: dotfiles pull).
-
-Execute the 'setup.sh' script that will automatically install all needed packages so that the configurations work correctly.
-Note that you will be asked several times for things like the password or whether or not you want to perform a specific action. Also, sometimes, you will be asked which of the available packages you want to install. In those cases, I recommend the default one. If you want to have autologin, make sure you type your username and session correctly (at the moment, only 'qtile' works as session).
+42. Install an AUR helper
 ```bash
-bash setup.sh
+git clone https://aur.archlinux.org/paru.git
+cd paru
+makepkg -si
 ```
 
-It's highly recommended to reboot after the script has finished if you didn't accept the prompt from the script.
+42. Install the rest of my packages
 ```bash
-reboot
+cat pkg.txt | xargs paru -S --needed
 ```
 
-To set a wallpaper on qtile, you need something like feh or nitrogen. 
-Open nitrogen with rofi and select the directory using the preferences button in which your wallpapers are stored. In my case is Pictures/Wallpapers, and the rest is very easy.
-
-To update the .pkg file with all the packages installed in your system, you have to remove the .pkg file and regenerate it
+To update the pkg.txt file with all the packages installed in your system, you have to remove the pkg.txt file and regenerate it
 ```bash
-rm .pkg
-pacman -Qqe | tr '\n' ' ' | sed 's/.$//' > .pkg
+rm pkg.txt
+pacman -Qqe | tr '\n' ' ' | sed 's/.$//' > pkg.txt
 ```
 
-To push the modified repository, you have to use dotfiles instead of git.
+To push the modification, you have to use dotfiles instead of git.
 ```bash
 dotfiles push -u origin main
 ```
-
