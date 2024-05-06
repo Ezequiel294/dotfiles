@@ -1,1 +1,1 @@
-cat $HOME/Scripts/packages/pkg.txt | xargs paru -S --needed
+cat $HOME/Scripts/packages/pkg.txt | xargs paru -S --needed --noconfirm

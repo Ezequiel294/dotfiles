@@ -102,10 +102,11 @@ useradd -m -G wheel username
 passwd username
 ```
 
-18. Install essential packages (recomended to edit /etc/pacman.conf to have parallel downloads)
+18. Install essential packages
 ```bash
-pacman -S base-devel grub efibootmgr os-prober intel-ucode nvidia mesa vulkan-intel networkmanager sudo alacritty git neovim
+pacman -S base-devel grub efibootmgr os-prober intel-ucode nvidia nvidia-utils nvidia-settings mesa vulkan-intel networkmanager pipewire wireplumber pipewire-audio pipewire-alsa pipewire-pulse pipewire-jack bluez bluez-utils sudo alacritty git neovim
 ```
+I recommend editing the /etc/pacman.conf file to enable parallel downloads
 
 19. Uncoment the following line in /etc/sudoers to make users in the wheel group use sudo
 ```bash
@@ -150,9 +151,9 @@ echo "hostname" > /etc/hostname
 > ::1          localhost<br>
 > 127.0.0.1    *hostname*.localhost *hostname*
 
-28. Enable networkmanager
+28. Enable networkmanager and bluetooth
 ```bash
-systemctl enable NetworkManager
+systemctl enable NetworkManager bluetooth
 ```
 
 29. Exit your system
@@ -222,7 +223,7 @@ sudo cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak
 
 44. Update mirror list
 ```bash
-bash $HOME/Scripts/reflector.sh
+bash $HOME/Scripts/mirrors.sh
 ```
 
 45. Install ranger icons
@@ -230,7 +231,12 @@ bash $HOME/Scripts/reflector.sh
 bash $HOME/.config/ranger/install-plugs.sh
 ```
 
-46. Restart your system
+46. Set up neovim
+```bash
+sudo npm install -g neovim
+```
+
+47. Restart your system
 ```bash
 reboot
 ```
