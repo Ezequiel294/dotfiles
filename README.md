@@ -7,7 +7,7 @@
 
 # Overview
 
-The following instructions are a guide to installing and configuring Arch. It is necessary to know Linux-based operating systems, virtual machines, and command line interfaces before following these instructions.
+The following instructions are a guide to installing and configuring Arch. It is necessary to know Linux-based operating systems and command line interfaces before following these instructions.
 
 # List of Requirements
 - Internet connection
