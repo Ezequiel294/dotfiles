@@ -102,7 +102,7 @@ useradd -m -G wheel username
 passwd username
 ```
 
-18. Install essential packages
+18. Install essential packages (recomended to edit /etc/pacman.conf to have parallel downloads)
 ```bash
 pacman -S base-devel grub efibootmgr os-prober intel-ucode nvidia mesa vulkan-intel networkmanager sudo alacritty git neovim
 ```
@@ -215,12 +215,22 @@ makepkg -si
 bash $HOME/Scripts/packages/install_pkg.sh
 ```
 
-43. Install ranger icons
+43. Backup your mirror list file
+```bash
+sudo cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak
+```
+
+44. Update mirror list
+```bash
+bash $HOME/Scripts/reflector.sh
+```
+
+45. Install ranger icons
 ```bash
 bash $HOME/.config/ranger/install-plugs.sh
 ```
 
-44. Restart your system
+46. Restart your system
 ```bash
 reboot
 ```
