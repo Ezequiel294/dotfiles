@@ -45,12 +45,12 @@ cfdisk
 
 7. Format the partitions with the following command
 ```bash
-mkfs.*format* *options* /dev/*partition*
+mkfs.format --options /dev/partition
 ```
 
 8. Mount the partitions (root partition should be mounted to /mnt)
 ```bash
-mount *otions* /dev*partition* *route*
+mount --otions /devpartition route
 ```
 
 9. Check you have internet
@@ -79,7 +79,7 @@ arch-chroot /mnt
 
 13. Set the time zone
 ```bash
-ln -sf /usr/share/zoneinfo/*Region/City* /etc/localtime
+ln -sf /usr/share/zoneinfo/Region/City /etc/localtime
 ```
 
 14. Run hwclock to generate /etc/adjtime
@@ -94,12 +94,12 @@ passwd
 
 16. Create your user
 ```bash
-useradd -m -G wheel *username*
+useradd -m -G wheel username
 ```
 
 17. Create a password for your user
 ```bash
-passwd *username*
+passwd username
 ```
 
 18. Install essential packages
@@ -108,10 +108,14 @@ pacman -S base-devel grub efibootmgr os-prober intel-ucode nvidia mesa vulkan-in
 ```
 
 19. Uncoment the following line in /etc/sudoers to make users in the wheel group use sudo
+```bash
 # %wheel ALL=(ALL) ALL
+```
 
 20. Uncoment in /etc/locale.gen the locales you want to have
+```bash
 #en_US.UTF-8 UTF-8
+```
 
 21. Generate the locales
 ```bash
@@ -138,13 +142,13 @@ grub-mkconfig -o /boot/grub/grub.cfg
 
 26. Set a hostname
 ```bash
-echo "*hostname*" > /etc/hostname
+echo "hostname" > /etc/hostname
 ```
 
-27. Make network configuration by editing your /etc/hosts file. A basic setup is
-127.0.0.1    localhost
-::1          localhost
-127.0.0.1    *hostname*.localhost *hostname*
+27. Make network configuration by editing your /etc/hosts file. A basic setup is<br>
+> 127.0.0.1    localhost<br>
+> ::1          localhost<br>
+> 127.0.0.1    *hostname*.localhost *hostname*
 
 28. Enable networkmanager
 ```bash
@@ -164,7 +168,7 @@ shutdown now
 
 32. Power your computer
 
-33. Enter your UEFI
+33. Enter your UEFI configuration
 
 34. Change the boot order to have the disk with Arch Linux first
 
