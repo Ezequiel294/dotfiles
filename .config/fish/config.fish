@@ -8,4 +8,5 @@ alias ls "exa --group-directories-first"
 alias tree "exa -T"
 alias dotfiles "git --git-dir $HOME/.dotfiles/ --work-tree $HOME"
 
+zoxide init --cmd cd fish | source
 starship init fish | source
