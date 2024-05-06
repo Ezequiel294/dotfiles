@@ -104,7 +104,7 @@ passwd username
 
 18. Install essential packages
 ```bash
-pacman -S base-devel grub efibootmgr os-prober intel-ucode nvidia nvidia-utils nvidia-settings mesa vulkan-intel networkmanager pipewire wireplumber pipewire-audio pipewire-alsa pipewire-pulse pipewire-jack bluez bluez-utils sudo alacritty git neovim
+pacman -S base-devel grub efibootmgr os-prober intel-ucode nvidia nvidia-utils nvidia-settings mesa vulkan-intel networkmanager pipewire wireplumber pipewire-audio pipewire-alsa pipewire-pulse pipewire-jack bluez bluez-utils reflector sudo alacritty git neovim
 ```
 I recommend editing the /etc/pacman.conf file to enable parallel downloads
 
@@ -204,39 +204,39 @@ git clone --bare https://github.com/Ezequiel294/dotfiles .dotfiles
 git --git-dir $HOME/.dotfiles/ --work-tree $HOME checkout --force
 ```
 
-42. Install an AUR helper
+42. Backup your mirror list file
+```bash
+sudo cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak
+```
+
+43. Update mirror list
+```bash
+bash $HOME/Scripts/mirrors.sh
+```
+
+44. Install an AUR helper
 ```bash
 git clone https://aur.archlinux.org/paru.git
 cd paru
 makepkg -si
 ```
 
-42. Install the rest of my packages
+45. Install the rest of my packages
 ```bash
 bash $HOME/Scripts/packages/install_pkg.sh
 ```
 
-43. Backup your mirror list file
-```bash
-sudo cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak
-```
-
-44. Update mirror list
-```bash
-bash $HOME/Scripts/mirrors.sh
-```
-
-45. Install ranger icons
+46. Install ranger icons
 ```bash
 bash $HOME/.config/ranger/install-plugs.sh
 ```
 
-46. Set up neovim
+47. Set up neovim
 ```bash
 sudo npm install -g neovim
 ```
 
-47. Restart your system
+48. Restart your system
 ```bash
 reboot
 ```
