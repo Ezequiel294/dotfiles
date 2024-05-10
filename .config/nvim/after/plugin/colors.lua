@@ -8,4 +8,4 @@ function ColorMyPencils(color, transparent)
     end
 end
 
-ColorMyPencils('catppuccin', false)
+ColorMyPencils('catppuccin', true)
