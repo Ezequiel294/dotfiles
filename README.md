@@ -1,3 +1,7 @@
+![desktop](https://github.com/Ezequiel294/dotfiles/assets/119618678/5f1e217a-35c3-4df4-9b37-d30633a50f12)
+![tmux](https://github.com/Ezequiel294/dotfiles/assets/119618678/19b9f282-916d-4edb-b907-4692c00bfc8e)
+
+
 # Index
 
 - [Overview](#overview)
