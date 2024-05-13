@@ -14,7 +14,7 @@ vim.opt.colorcolumn = '81'
 
 vim.opt.ruler = true
 
-vim.opt.wrap = true
+vim.opt.wrap = false
 
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
