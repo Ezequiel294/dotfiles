@@ -28,8 +28,6 @@ vim.opt.cursorline = true
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 
-vim.opt.clipboard = 'unnamedplus'
-
 vim.opt.updatetime = 50
 
 vim.opt.signcolumn = 'yes'
