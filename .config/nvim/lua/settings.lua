@@ -10,7 +10,7 @@ vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.smarttab = true
 
-vim.opt.colorcolumn = '81'
+vim.opt.colorcolumn = "81"
 
 vim.opt.ruler = true
 
@@ -19,7 +19,7 @@ vim.opt.wrap = false
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
 
-vim.opt.mouse = 'a'
+vim.opt.mouse = "a"
 
 vim.opt.scrolloff = 8
 
@@ -30,7 +30,7 @@ vim.opt.splitright = true
 
 vim.opt.updatetime = 50
 
-vim.opt.signcolumn = 'yes'
+vim.opt.signcolumn = "yes"
 
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
