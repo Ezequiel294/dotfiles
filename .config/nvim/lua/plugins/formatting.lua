@@ -28,6 +28,8 @@ return {
 			typescript = { { "prettierd", "prettier" } },
 			javascriptreact = { { "prettierd", "prettier" } },
 			typescriptreact = { { "prettierd", "prettier" } },
+			json = { { "prettierd", "prettier" } },
+			jsonc = { { "prettierd", "prettier" } },
 			css = { { "prettierd", "prettier" } },
 			html = { { "prettierd", "prettier" } },
 			markdown = { { "prettierd", "prettier" } },
