@@ -28,7 +28,7 @@
     },
     {
       "type": "shell",
-      "key": "│ └  ",
+      "key": "│ ├  ",
       "keyColor": "yellow",
     },
     {
@@ -38,7 +38,7 @@
     },
     {
       "type": "terminalfont",
-      "key": "│ ├ ",
+      "key": "│ └ ",
       "keyColor": "yellow",
     },
     {
@@ -112,8 +112,13 @@
       "keyColor": "blue",
     },
     {
+      "type": "font",
+      "key": "│ ├ ",
+      "keyColor": "blue",
+    },
+    {
       "type": "cursor",
-      "key": "│ ├ 󰇀",
+      "key": "│ └ 󰇀",
       "keyColor": "blue",
     },
     "break",
