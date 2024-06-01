@@ -9,5 +9,8 @@ alias tree "exa -T"
 alias tmux "tmux -2"
 alias dotfiles "git --git-dir $HOME/.dotfiles/ --work-tree $HOME"
 
+set -gx PATH "$HOME/.tmux/plugins/tmuxifier/bin" $PATH
+eval (tmuxifier init - fish)
+
 zoxide init --cmd cd fish | source
 starship init fish | source

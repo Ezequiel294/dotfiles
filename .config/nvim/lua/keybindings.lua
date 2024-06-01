@@ -22,12 +22,6 @@ vim.keymap.set("v", "<S-TAB>", "<gv")
 vim.keymap.set("x", "J", ":move '>+1<CR>gv-gv")
 vim.keymap.set("x", "K", ":move '<-2<CR>gv-gv")
 
--- Better window navigation
-vim.keymap.set("n", "<M-h>", "<C-w>h")
-vim.keymap.set("n", "<M-j>", "<C-w>j")
-vim.keymap.set("n", "<M-k>", "<C-w>k")
-vim.keymap.set("n", "<M-l>", "<C-w>l")
-
 -- TAB cicles buffers
 vim.keymap.set("n", "<TAB>", ":bnext<CR>")
 
