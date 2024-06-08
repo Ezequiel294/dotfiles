@@ -13,12 +13,16 @@
 
 The following instructions are a guide to installing and configuring Arch. It is necessary to know Linux-based operating systems and command line interfaces before following these instructions.
 
+> [!NOTE]
+> - Arch Linux installation images do not support Secure Boot. You will need to disable Secure Boot to boot the installation medium.
+> - Code examples may contain placeholders that must be replaced manually. 
+
 # List of Requirements
 - Internet connection
 - 64-bit computer Using UEFI
 - Keyboard and Mouse
 - At least 2GB of available RAM Memory
-- At least 15GB of available storage
+- At least 16GB of available storage
 
 # Arch Installation
 
@@ -27,10 +31,11 @@ The following instructions are a guide to installing and configuring Arch. It is
 
 2. Boot to the USB memory
 
-3. Select the first boot option
+3. Select the first boot option withe the "Enter" key
 
-Now we can start with the Arch Installation; I recommend opening the official guide to help.
-- [Arch Installation Guide](https://wiki.archlinux.org/title/Installation_guide)
+> [!NOTE]
+> I recommend opening the official guide to follow along in case something changes or you have a different need.
+> - [Arch Installation Guide](https://wiki.archlinux.org/title/Installation_guide)
 
 4. Change the terminal font if it is too small
 ```bash
@@ -49,7 +54,7 @@ cfdisk
 
 7. Format the partitions with the following command
 ```bash
-mkfs.format --options /dev/partition
+mkfs.format --(options) /dev/partition
 ```
 
 8. Mount the partitions (root partition should be mounted to /mnt)
@@ -61,7 +66,7 @@ mount --options /dev/partition route
 ```bash
 ping google.com
 ```
-If not, use command
+If not, use the "iw" tool with the following command
 ```bash
 iwctl
 ```
@@ -98,8 +103,13 @@ passwd
 
 16. Create your user
 ```bash
-useradd -m -G wheel username
+useradd -m username
 ```
+> [!NOTE]
+> If you want your user to be sudo, use this command to add it to the wheel group
+> ```bash
+> useradd -mG wheel username
+> ```
 
 17. Create a password for your user
 ```bash
@@ -110,7 +120,8 @@ passwd username
 ```bash
 pacman -S base-devel grub efibootmgr os-prober intel-ucode nvidia nvidia-utils nvidia-settings mesa vulkan-intel networkmanager pipewire wireplumber pipewire-audio pipewire-alsa pipewire-pulse pipewire-jack bluez bluez-utils reflector sudo alacritty git neovim
 ```
-I recommend editing the /etc/pacman.conf file to enable parallel downloads
+> [!NOTE]
+> I recommend editing the /etc/pacman.conf file to enable parallel downloads
 
 19. Uncoment the following line in /etc/sudoers to make users in the wheel group use sudo
 ```bash
@@ -132,7 +143,7 @@ locale-gen
 touch /etc/locale.conf
 ```
 
-23. Ser the language
+23. Set the language
 LANG=en_US.UTF-8
 
 24. Install grub
@@ -169,9 +180,9 @@ exit
 shutdown now
 ```
 
-31. Remove the USB memory
+31. When powered off, remove the USB memory
 
-32. Power your computer
+32. Power your computer back on
 
 33. Enter your UEFI configuration
 
@@ -179,7 +190,7 @@ shutdown now
 
 35. Select the first boot option in Grub
 
-36. Log in with your user
+36. Login with your user
 
 37. Install KDE Plasma desktop envirorment
 ```bash
