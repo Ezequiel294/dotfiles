@@ -1,14 +1,25 @@
-#
-# ~/.bashrc
-#
+# .bashrc
 
-# If not running interactively, don't do anything
-[[ $- != *i* ]] && return
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+    . /etc/bashrc
+fi
 
-alias grep='grep --color=auto'
-alias cat='bat --style=plain --paging=never'
-alias ls='exa --group-directories-first'
-alias tree='exa -T'
-alias dotfiles="git --git-dir $HOME/.dotfiles/ --work-tree $HOME"
+# User specific environment
+if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]; then
+    PATH="$HOME/.local/bin:$HOME/bin:$PATH"
+fi
+export PATH
 
-PS1='[\u@\h \W]\$ '
+# Uncomment the following line if you don't like systemctl's auto-paging feature:
+# export SYSTEMD_PAGER=
+
+# User specific aliases and functions
+if [ -d ~/.bashrc.d ]; then
+    for rc in ~/.bashrc.d/*; do
+        if [ -f "$rc" ]; then
+            . "$rc"
+        fi
+    done
+fi
+unset rc
