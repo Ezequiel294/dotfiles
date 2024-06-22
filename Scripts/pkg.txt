@@ -607,9 +607,7 @@ gtk-update-icon-cache.x86_64                         3.24.42-2.fc40             
 gtk-vnc2.x86_64                                      1.3.1-5.fc40                        @fedora                                     
 gtk2.x86_64                                          2.24.33-18.fc40                     @anaconda                                   
 gtk2-engines.x86_64                                  2.20.2-29.fc40                      @anaconda                                   
-gtk2-immodule-xim.x86_64                             2.24.33-18.fc40                     @anaconda                                   
 gtk3.x86_64                                          3.24.42-2.fc40                      @updates                                    
-gtk3-immodule-xim.x86_64                             3.24.42-2.fc40                      @updates                                    
 gtk4.x86_64                                          4.14.4-2.fc40                       @updates                                    
 gtkmm3.0.x86_64                                      3.24.9-1.fc40                       @anaconda                                   
 gtksourceview4.x86_64                                4.8.4-6.fc40                        @fedora                                     
@@ -652,7 +650,6 @@ ibus-anthy.x86_64                                    1.5.16-6.fc40              
 ibus-anthy-python.noarch                             1.5.16-6.fc40                       @updates                                    
 ibus-gtk2.x86_64                                     1.5.30-1.fc40                       @updates                                    
 ibus-gtk3.x86_64                                     1.5.30-1.fc40                       @updates                                    
-ibus-gtk4.x86_64                                     1.5.30-1.fc40                       @updates                                    
 ibus-hangul.x86_64                                   1.5.5-5.fc40                        @anaconda                                   
 ibus-libpinyin.x86_64                                1.15.7-1.fc40                       @anaconda                                   
 ibus-libs.x86_64                                     1.5.30-1.fc40                       @updates                                    
@@ -1192,7 +1189,6 @@ libi2c.x86_64                                        4.3-10.fc40                
 libibverbs.x86_64                                    48.0-4.fc40                         @anaconda                                   
 libical.x86_64                                       3.0.18-1.fc40                       @updates                                    
 libicu.x86_64                                        74.2-1.fc40                         @anaconda                                   
-libidn.x86_64                                        1.42-3.fc40                         @anaconda                                   
 libidn2.x86_64                                       2.3.7-1.fc40                        @anaconda                                   
 libiec61883.x86_64                                   1.2.0-34.fc40                       @fedora                                     
 libieee1284.x86_64                                   0.2.11-43.fc40                      @anaconda                                   
@@ -2109,7 +2105,6 @@ raptor2.x86_64                                       2.0.15-43.fc40             
 rasqal.x86_64                                        0.9.33-28.fc40                      @anaconda                                   
 rav1e-libs.x86_64                                    0.7.1-2.fc40                        @updates                                    
 rb_libtorrent.x86_64                                 2.0.10-1.fc40                       @updates                                    
-re2.x86_64                                           1:20220601-5.fc40                   @anaconda                                   
 readline.x86_64                                      8.2-8.fc40                          @anaconda                                   
 realmd.x86_64                                        0.17.1-12.fc40                      @anaconda                                   
 realtek-firmware.noarch                              20240610-1.fc40                     @updates                                    
@@ -2333,7 +2328,6 @@ wavpack.x86_64                                       5.6.0-6.fc40               
 wayland-utils.x86_64                                 1.2.0-4.fc40                        @anaconda                                   
 webp-pixbuf-loader.x86_64                            0.2.7-1.fc40                        @anaconda                                   
 webrtc-audio-processing.x86_64                       1.3-1.fc40                          @anaconda                                   
-webrtc-audio-processing0.3.x86_64                    0.3.1-12.fc40                       @anaconda                                   
 wget2.x86_64                                         2.1.0-9.fc40                        @updates                                    
 wget2-libs.x86_64                                    2.1.0-9.fc40                        @updates                                    
 wget2-wget.x86_64                                    2.1.0-9.fc40                        @updates                                    
