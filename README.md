@@ -192,14 +192,14 @@ shutdown now
 
 36. Login with your user
 
-37. Install KDE Plasma desktop envirorment
+37. Install Sway and its utilities
 ```bash
-sudo pacman -S plasma-meta
+sudo pacman -S sway swaylock swayidle swaybg rofi
 ```
 
-38. Enable the login manager
+38. Copy the default config
 ```bash
-sudo systemctl enable sddm
+cp /etc/sway/config ~/.config/sway
 ```
 
 39. Restart your computer
