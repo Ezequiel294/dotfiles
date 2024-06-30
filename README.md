@@ -1,5 +1,5 @@
-![desktop](https://github.com/Ezequiel294/dotfiles/assets/119618678/5f1e217a-35c3-4df4-9b37-d30633a50f12)
-![tmux](https://github.com/Ezequiel294/dotfiles/assets/119618678/19b9f282-916d-4edb-b907-4692c00bfc8e)
+![desktop](https://github.com/Ezequiel294/dotfiles/assets/119618678/51bcaf6a-1389-4c64-bec7-ffe747c48cfa)
+![showcase](https://github.com/Ezequiel294/dotfiles/assets/119618678/afd3680c-628d-46d6-a962-5462a5724b0b)
 
 
 # Index
@@ -201,6 +201,11 @@ sudo pacman -S sway swaylock swayidle swaybg rofi
 ```bash
 cp /etc/sway/config ~/.config/sway
 ```
+> [!NOTE]
+> To start sway you can do so by executing the sway command in the terminal
+> ```bash
+> sway
+> ```
 
 39. Restart your computer
 ```bash
