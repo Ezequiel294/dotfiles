@@ -1,3 +1,3 @@
 #!/bin/bash
 
-cat $HOME/Scripts/packages/pkg.txt | xargs paru -S --needed --noconfirm
+cat $HOME/Scripts/Arch/packages/pkg.txt | xargs paru -S --needed --noconfirm
