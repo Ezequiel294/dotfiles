@@ -5,7 +5,7 @@
 
 # Fedora
 
-
+![Desktop](https://github.com/Ezequiel294/dotfiles/assets/119618678/2427d392-036e-4553-be12-222d1ccae3e2)
 
 # Index
 
