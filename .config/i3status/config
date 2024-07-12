@@ -13,6 +13,7 @@ general {
 }
 
 order += "wireless _first_"
+order += "ethernet _first_"
 order += "battery all"
 order += "cpu_usage"
 order += "memory"
@@ -21,7 +22,12 @@ order += "tztime local"
 
 wireless _first_ {
         format_up = "%essid %quality"
-        format_down = "No Connection"
+        format_down = "No Wi-Fi"
+}
+
+ethernet _first_ {
+        format_up = "%name %ip"
+        format_down = "No Wired Connection"
 }
 
 battery all {
