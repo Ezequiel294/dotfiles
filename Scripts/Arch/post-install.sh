@@ -4,14 +4,9 @@
 set -e
 set -o pipefail
 
-# Clone my dotfiles
-echo "Setting up dotfiles"
-git clone --bare https://github.com/Ezequiel294/dotfiles .dotfiles
-git --git-dir $HOME/.dotfiles/ --work-tree $HOME checkout --force
-echo "Dotfiles setup complete"
-
 # Install paru
 echo "Installing paru..."
+cd $HOME
 git clone https://aur.archlinux.org/paru.git .paru
 cd .paru
 makepkg -si
