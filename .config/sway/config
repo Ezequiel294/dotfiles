@@ -240,4 +240,6 @@ input type:touchpad {
 	natural_scroll enable
 }
 
+exec --no-startup-id /usr/bin/lxpolkit 
+
 include /etc/sway/config.d/*
