@@ -240,6 +240,16 @@ input type:touchpad {
 	natural_scroll enable
 }
 
+# Set gtk theme
+set $gnome_schema org.gnome.desktop.interface
+exec_always {
+    gsettings set $gnome_schema gtk-theme "Breeze-Dark"
+    gsettings set $gnome_schema icon-theme "Adwaita"
+    gsettings set $gnome_schema cursor-theme "Adwaita"
+    gsettings set $gnome_schema font-name "Cantarell 10"
+    gsettings set $gnome_schema cursor-size "24"
+}
+
 exec --no-startup-id /usr/bin/lxpolkit 
 
 include /etc/sway/config.d/*
