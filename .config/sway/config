@@ -2,6 +2,8 @@
 #
 # Authentication agent
 exec --no-startup-id /usr/bin/lxpolkit 
+# Insync
+exec insync start
 
 ### Variables
 #
