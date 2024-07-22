@@ -86,7 +86,7 @@ iwctl
 
 10. Install kernel and base package
 ```bash
-pacstrap -K /mnt linux linux-firmware base
+pacstrap -K /mnt linux linux-firmware base git
 ```
 
 11. Generate the fstab file
