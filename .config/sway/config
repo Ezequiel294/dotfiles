@@ -1,7 +1,9 @@
 ### Autostart
 #
 # Authentication agent
-exec --no-startup-id /usr/bin/lxpolkit 
+exec /usr/bin/lxpolkit 
+# Autotiling
+exec autotiling
 # Insync
 exec insync start
 
