@@ -116,7 +116,7 @@ cd /
 
 16. Run my script
 ```bash
-bash /root/base-install.sh
+bash /root/arch-install/base-install.sh
 ```
 
 17. Exit your system
