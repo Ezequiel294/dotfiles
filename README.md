@@ -1,22 +1,24 @@
+# Fedora
+
+![Desktop](https://github.com/Ezequiel294/dotfiles/assets/119618678/2427d392-036e-4553-be12-222d1ccae3e2)
+
+Go to Fedora's website and install the KDE edition
+
 # Arch
 
 ![desktop](https://github.com/Ezequiel294/dotfiles/assets/119618678/51bcaf6a-1389-4c64-bec7-ffe747c48cfa)
 ![showcase](https://github.com/Ezequiel294/dotfiles/assets/119618678/afd3680c-628d-46d6-a962-5462a5724b0b)
-
-# Fedora
-
-![Desktop](https://github.com/Ezequiel294/dotfiles/assets/119618678/2427d392-036e-4553-be12-222d1ccae3e2)
 
 # Index
 
 - [Overview](#overview)
 - [Requirements](#list-of-requirements)
 - [Arch Installation](#arch-installation)
-- [Configuration](#configuration)
+- [FAQ](#faq)
 
 # Overview
 
-The following instructions are a guide to installing and configuring Arch. It is necessary to know Linux-based operating systems and command line interfaces before following these instructions.
+The following instructions are a guide to installing and configuring Arch. Before following these instructions, it is necessary to know Linux-based operating systems and command line interfaces.
 
 > [!NOTE]
 > - Arch Linux installation images do not support Secure Boot. You will need to disable Secure Boot to boot the installation medium.
@@ -36,7 +38,7 @@ The following instructions are a guide to installing and configuring Arch. It is
 
 2. Boot to the USB memory
 
-3. Select the first boot option withe the "Enter" key
+3. Select the first boot option with the "Enter" key
 
 > [!NOTE]
 > I recommend opening the official guide to follow along in case something changes or you have a different need.
@@ -57,14 +59,21 @@ lsblk
 cfdisk
 ```
 
-7. Format the partitions with the following command
+7. Format the partitions with the following commands
 ```bash
-mkfs.format --(options) /dev/partition
+mkfs.vfat -F32 /dev/partion
+mkfs.ext4 /dev/partition
+mkswap /dev/partition
 ```
+> [!NOTE]
+> Use vfat for the EFI partition and ext4 for the root
 
-8. Mount the partitions (root partition should be mounted to /mnt)
+8. Mount the partitions
+> [!NOTE]
+> Root partition should be mounted to /mnt
 ```bash
-mount --options /dev/partition route
+mount /dev/partition /mnt
+mount /dev/partition /mnt/boot
 ```
 
 9. Check you have internet
@@ -91,187 +100,61 @@ genfstab -U /mnt >> /mnt/etc/fstab
 arch-chroot /mnt
 ```
 
-13. Set the time zone
+13. Move to the root directory
 ```bash
-ln -sf /usr/share/zoneinfo/Region/City /etc/localtime
+cd /root
 ```
 
-14. Run hwclock to generate /etc/adjtime
+14. Clone my arch base installation script
 ```bash
-hwclock --systohc
+git clone https://github.com/Ezequiel294/arch-install
 ```
 
-15. Set the root user password
+15. Move back to root
 ```bash
-passwd
+cd /
 ```
 
-16. Create your user
+16. Run my script
 ```bash
-useradd -m username
-```
-> [!NOTE]
-> If you want your user to be sudo, use this command to add it to the wheel group
-> ```bash
-> useradd -mG wheel username
-> ```
-
-17. Create a password for your user
-```bash
-passwd username
+bash /root/base-install.sh
 ```
 
-18. Install essential packages
-```bash
-pacman -S base-devel grub efibootmgr os-prober intel-ucode nvidia nvidia-utils nvidia-settings mesa vulkan-intel networkmanager pipewire wireplumber pipewire-audio pipewire-alsa pipewire-pulse pipewire-jack bluez bluez-utils reflector sudo alacritty git neovim
-```
-> [!NOTE]
-> I recommend editing the /etc/pacman.conf file to enable parallel downloads
-
-19. Uncoment the following line in /etc/sudoers to make users in the wheel group use sudo
-```bash
-# %wheel ALL=(ALL) ALL
-```
-
-20. Uncoment in /etc/locale.gen the locales you want to have
-```bash
-#en_US.UTF-8 UTF-8
-```
-
-21. Generate the locales
-```bash
-locale-gen
-```
-
-22. Create the locale.conf file
-```bash
-touch /etc/locale.conf
-```
-
-23. Set the language
-LANG=en_US.UTF-8
-
-24. Install grub
-```bash
-grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
-```
-
-25. Make the grub configuration
-```bash
-grub-mkconfig -o /boot/grub/grub.cfg
-```
-
-26. Set a hostname
-```bash
-echo "hostname" > /etc/hostname
-```
-
-27. Make network configuration by editing your /etc/hosts file. A basic setup is<br>
-> 127.0.0.1    localhost<br>
-> ::1          localhost<br>
-> 127.0.0.1    *hostname*.localhost *hostname*
-
-28. Enable networkmanager and bluetooth
-```bash
-systemctl enable NetworkManager bluetooth
-```
-
-29. Exit your system
+17. Exit your system
 ```bash
 exit
 ```
-30. Shutdown your computer
+18. Shutdown your computer
 ```bash
 shutdown now
 ```
 
-31. When powered off, remove the USB memory
+19. When powered off, remove the USB memory
 
-32. Power your computer back on
+20. Power your computer back on
 
-33. Enter your UEFI configuration
+21. Select the first boot option in Grub
 
-34. Change the boot order to have the disk with Arch Linux first
+22. Login with your user
 
-35. Select the first boot option in Grub
-
-36. Login with your user
-
-37. Install Sway and its utilities
+23. Run my post-installation script
 ```bash
-sudo pacman -S sway swaylock swayidle swaybg rofi
+bash Scripts/Arch/post-install.sh
 ```
 
-38. Copy the default config
-```bash
-cp /etc/sway/config ~/.config/sway
-```
-> [!NOTE]
-> To start sway you can do so by executing the sway command in the terminal
-> ```bash
-> sway
-> ```
-
-39. Restart your computer
+24. Restart your computer
 ```bash
 reboot
 ```
 
-# Configuration
-
-40. Clone this repo in your user directory
-```bash
-git clone --bare https://github.com/Ezequiel294/dotfiles .dotfiles
-```
-
-41. Execute the following command.
-```bash
-git --git-dir $HOME/.dotfiles/ --work-tree $HOME checkout --force
-```
-
-42. Backup your mirror list file
-```bash
-sudo cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak
-```
-
-43. Update mirror list
-```bash
-bash $HOME/Scripts/mirrors.sh
-```
-
-44. Install an AUR helper
-```bash
-git clone https://aur.archlinux.org/paru.git
-cd paru
-makepkg -si
-```
-
-45. Install the rest of my packages
-```bash
-bash $HOME/Scripts/packages/install_pkg.sh
-```
-
-46. Install ranger icons
-```bash
-bash $HOME/.config/ranger/install-plugs.sh
-```
-
-47. Set up neovim
-```bash
-sudo npm install -g neovim
-```
-
-48. Restart your system
-```bash
-reboot
-```
+# FAQ
 
 To update the pkg.txt file with all the packages installed in your system
 ```bash
-bash $HOME/Scripts/packages/update_pkg.sh
+bash $HOME/Scripts/Arch/update_pkg.sh
 ```
 
 To push the modification, you have to use dotfiles instead of git.
 ```bash
-dotfiles push -u origin main
+dotfiles push
 ```
