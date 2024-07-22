@@ -6,8 +6,7 @@ Go to Fedora's website and install the KDE edition
 
 # Arch
 
-![desktop](https://github.com/Ezequiel294/dotfiles/assets/119618678/51bcaf6a-1389-4c64-bec7-ffe747c48cfa)
-![showcase](https://github.com/Ezequiel294/dotfiles/assets/119618678/afd3680c-628d-46d6-a962-5462a5724b0b)
+![setup](https://github.com/user-attachments/assets/a59c90de-5377-46a1-b529-677117f6b3d5)
 
 # Index
 
