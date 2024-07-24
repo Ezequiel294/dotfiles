@@ -22,9 +22,6 @@ vim.keymap.set("v", "<S-TAB>", "<gv")
 vim.keymap.set("x", "J", ":move '>+1<CR>gv-gv")
 vim.keymap.set("x", "K", ":move '<-2<CR>gv-gv")
 
--- TAB cicles buffers
-vim.keymap.set("n", "<TAB>", ":bnext<CR>")
-
 -- CLose buffer
 vim.keymap.set("n", "<leader>cb", ":bd<CR>")
 vim.keymap.set("n", "<leader>db", ":bw<CR>")
