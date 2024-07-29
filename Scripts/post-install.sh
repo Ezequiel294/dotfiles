@@ -14,15 +14,10 @@ echo "Paru has been installed"
 
 # Install packages
 echo "Installing packages..."
-cat $HOME/Scripts/Arch/pkg.txt | xargs paru -S --needed --noconfirm
-
-# Install ranger icons
-echo "Installing ranger icons"
-bash $HOME/.config/ranger/install-plugs.sh
-echo "Ranger icons installed"
+cat $HOME/Scripts/pkg.txt | xargs paru -S --needed --noconfirm
 
 # Install yarn and neovim npm package
-echo "Installing yarn..."
+echo "Installing yarn and npm neovim packages..."
 sudo npm install -g neovim yarn
 echo "Yarn has been installed"
 
