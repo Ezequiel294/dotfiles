@@ -1,17 +1,10 @@
-# Fedora
-
-![Desktop](https://github.com/Ezequiel294/dotfiles/assets/119618678/2427d392-036e-4553-be12-222d1ccae3e2)
-
-Go to Fedora's website and install the KDE edition
-
-# Arch
-
-![setup](https://github.com/user-attachments/assets/a59c90de-5377-46a1-b529-677117f6b3d5)
+[setup](https://github.com/user-attachments/assets/a59c90de-5377-46a1-b529-677117f6b3d5)
 
 # Index
 
+- [Index](#index)
 - [Overview](#overview)
-- [Requirements](#list-of-requirements)
+- [List of Requirements](#list-of-requirements)
 - [Arch Installation](#arch-installation)
 - [FAQ](#faq)
 
