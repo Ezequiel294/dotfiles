@@ -21,6 +21,10 @@ echo "Installing yarn and npm neovim packages..."
 sudo npm install -g neovim yarn
 echo "Yarn has been installed"
 
+# Install bat catppuccin theme
+wget -P "$(bat --config-dir)/themes" https://github.com/catppuccin/bat/raw/main/themes/Catppuccin%20Mocha.tmTheme
+bat cache --build
+
 # Enable ly service
 echo "Enabling ly service..."
 sudo systemctl enable ly
