@@ -41,11 +41,6 @@ return {
                     "jsonls",
                     "cssls",
                     "html",
-
-                    "stylua",
-                    "isort", "black",
-                    "clang-format",
-                    "shfmt",
                 },
                 handlers = {
                     lsp_zero.default_setup,
