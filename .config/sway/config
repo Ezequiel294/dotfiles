@@ -2,8 +2,6 @@
 #
 # Authentication agent
 exec /usr/bin/lxpolkit 
-# Keyboard remapping
-exec sudo ~/.cargo/bin/kanata -c ~/.config/kanata/config.kbd
 # Autotiling
 exec autotiling
 # Insync
