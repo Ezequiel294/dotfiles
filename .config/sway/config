@@ -6,10 +6,10 @@ exec /usr/bin/lxpolkit
 exec autotiling
 # Insync
 exec insync start
-# Dropbox
-exec dropbox
 # Bluetooth tray
 exec blueman-applet
+# Dropbox
+exec dropbox
 # KeepassXC
 exec keepassxc
 
