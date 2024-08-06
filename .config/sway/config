@@ -6,6 +6,12 @@ exec /usr/bin/lxpolkit
 exec autotiling
 # Insync
 exec insync start
+# Dropbox
+exec dropbox
+# Bluetooth tray
+exec blueman-applet
+# KeepassXC
+exec keepassxc
 
 ### Variables
 #
@@ -190,8 +196,6 @@ input type:touchpad {
 bar {
     status_command i3status
     position bottom
-    tray_output primary
-    tray_padding 0
     font jetbrains mono nerd 10
     colors {
         statusline #ffffff
