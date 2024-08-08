@@ -8,10 +8,10 @@ exec autotiling
 exec insync start
 # Bluetooth tray
 exec blueman-applet
-# Dropbox
-exec dropbox
 # KeepassXC
 exec keepassxc
+# Dropbox
+exec sleep 10 && dropbox
 
 ### Variables
 #
@@ -71,6 +71,8 @@ input type:touchpad {
     bindsym $mod+r exec $menu
     # Start file manager
     bindsym $mod+e exec thunar
+    # Start Password Manager
+    bindsym $mod+p exec keepassxc
     # Screenshot
     bindsym Print exec slurp | grim -g - screenshot.png
 
