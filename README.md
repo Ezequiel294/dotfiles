@@ -1,11 +1,8 @@
-[setup](https://github.com/user-attachments/assets/a59c90de-5377-46a1-b529-677117f6b3d5)
-
 # Index
 
-- [Index](#index)
 - [Overview](#overview)
 - [List of Requirements](#list-of-requirements)
-- [Arch Installation](#arch-installation)
+- [Sway installation and configuration](#sway-installation-and-configuration)
 - [FAQ](#faq)
 
 # Overview
@@ -25,116 +22,16 @@ The following instructions are a guide to installing and configuring Arch. Befor
 
 # Arch Installation
 
-1. Download the Arch ISO and burn it to a USB memory:
-- [Arch ISO](https://archlinux.org/download/)
+1. Follow the instructions in the README.md file in my other repository [Arch-Installation](https://github.com/Ezequiel294/arch-install)
 
-2. Boot to the USB memory
+# Sway installation and configuration
 
-3. Select the first boot option with the "Enter" key
-
-> [!NOTE]
-> I recommend opening the official guide to follow along in case something changes or you have a different need.
-> - [Arch Installation Guide](https://wiki.archlinux.org/title/Installation_guide)
-
-4. Change the terminal font if it is too small
+1. After installing Arch, run my post-installation script
 ```bash
-setfont ter-132b
+bash $HOME/Scripts/post-install.sh
 ```
 
-5. Display block devices
-```bash
-lsblk
-```
-
-6. Make the disk partitions
-```bash
-cfdisk
-```
-
-7. Format the partitions with the following commands
-```bash
-mkfs.vfat -F32 /dev/partion
-mkfs.ext4 /dev/partition
-mkswap /dev/partition
-```
-> [!NOTE]
-> Use vfat for the EFI partition and ext4 for the root
-
-8. Mount the partitions
-> [!NOTE]
-> Root partition should be mounted to /mnt
-```bash
-mount /dev/partition /mnt
-mount /dev/partition /mnt/boot
-```
-
-9. Check you have internet
-```bash
-ping google.com
-```
-If not, use the "iw" tool with the following command
-```bash
-iwctl
-```
-
-10. Install kernel and base package
-```bash
-pacstrap -K /mnt linux linux-firmware base git
-```
-
-11. Generate the fstab file
-```bash
-genfstab -U /mnt >> /mnt/etc/fstab
-```
-
-12. Change root to your system
-```bash
-arch-chroot /mnt
-```
-
-13. Move to the root directory
-```bash
-cd /root
-```
-
-14. Clone my arch base installation script
-```bash
-git clone https://github.com/Ezequiel294/arch-install
-```
-
-15. Move back to root
-```bash
-cd /
-```
-
-16. Run my script
-```bash
-bash /root/arch-install/base-install.sh
-```
-
-17. Exit your system
-```bash
-exit
-```
-18. Shutdown your computer
-```bash
-shutdown now
-```
-
-19. When powered off, remove the USB memory
-
-20. Power your computer back on
-
-21. Select the first boot option in Grub
-
-22. Login with your user
-
-23. Run my post-installation script
-```bash
-bash Scripts/Arch/post-install.sh
-```
-
-24. Restart your computer
+2. Restart your computer
 ```bash
 reboot
 ```
