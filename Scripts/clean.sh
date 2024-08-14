@@ -5,9 +5,7 @@ echo -e "\nCleaning journalctl logs..."
 sudo journalctl -p 3 -xb --vacuum-time=7d
 
 # Run paccache -d to show available removal space
-echo -e "\nRunning paccache -d to show available removal space..."
-paccache -d
-echo "Cleaning..."
+echo -e "\nRunning paccache"
 paccache -r
 
 # Clean ununsed dependencies
