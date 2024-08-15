@@ -13,9 +13,9 @@ return {
 					hide_dotfiles = false,
 					hide_gitignored = false,
 				},
+
 			},
 		})
-		vim.keymap.set("n", "<leader>fe", ":Neotree float filesystem toggle=true <CR>")
-		vim.keymap.set("n", "<leader>gs", ":Neotree float git_status toggle=true <CR>")
+		vim.keymap.set("n", "<leader>fe", ":Neotree toggle=true position=current <CR>")
 	end,
 }
