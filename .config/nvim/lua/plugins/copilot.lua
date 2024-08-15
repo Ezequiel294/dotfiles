@@ -15,13 +15,10 @@ return {
 		-- See Commands section for default commands if you want to lazy load on them
 		config = function()
 			require("CopilotChat").setup({
-				window = {
-					layout = "float",
-                    width = 0.7,
-                    height = 0.7,
-				},
-			})
-
+                window = {
+                    width = 0.4
+                },
+            })
 			vim.keymap.set("n", "<leader>ct", ":CopilotChatToggle<CR>")
 			vim.keymap.set("v", "<leader>ce", ":CopilotChatExplain<CR>")
 			vim.keymap.set("v", "<leader>cr", ":CopilotChatReview<CR>")
