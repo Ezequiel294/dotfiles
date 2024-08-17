@@ -11,7 +11,7 @@ exec blueman-applet
 # KeepassXC
 exec keepassxc
 # Dropbox
-exec sleep 5 && dropbox
+exec_always sleep 5 && dropbox
 
 ### Variables
 #
@@ -30,7 +30,7 @@ set $menu wofi --show drun
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /home/ezequiel/Pictures/Wallpapers/evening-sky.png fill
+output * bg $HOME/Pictures/Wallpapers/evening-sky.png fill
 
 ### Idle configuration
 #
