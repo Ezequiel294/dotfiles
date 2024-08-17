@@ -16,6 +16,14 @@ echo "Paru has been installed"
 echo -e "\nInstalling packages..."
 cat $HOME/Scripts/pkg.txt | xargs paru -S --needed --noconfirm
 
+# Set environment variables
+echo -e "\nSetting environment variables..."
+echo "QT_QPA_PLATFORMTHEME=qt6ct" | sudo tee -a /etc/environment
+echo "EDITOR=nvim" | sudo tee -a /etc/environment
+echo "VISUAL=nvim" | sudo tee -a /etc/environment
+echo "TERM=kitty" | sudo tee -a /etc/environment
+echo "Environment variables have been set"
+
 # Adding user to the libvirt group
 echo -e "\nAdding user to the libvirt group..."
 sudo usermod -aG libvirt $USER
@@ -32,7 +40,7 @@ wget -P "$(bat --config-dir)/themes" https://github.com/catppuccin/bat/raw/main/
 bat cache --build
 echo "Bat catppuccin theme has been installed"
 
-# Enable ly service
+# Enable services
 echo -e "\nEnabling services..."
 sudo systemctl enable libvirtd
 sudo systemctl enable ly
