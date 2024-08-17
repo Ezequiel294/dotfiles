@@ -11,7 +11,7 @@ exec blueman-applet
 # KeepassXC
 exec keepassxc
 # Dropbox
-exec_always sleep 5 && dropbox
+exec sleep 3 && dropbox
 
 ### Variables
 #
