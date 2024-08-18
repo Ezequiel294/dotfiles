@@ -1,7 +1,8 @@
 # Sway
 
-![Desktop](https://github.com/user-attachments/assets/426211ae-0f96-4826-a994-53562184d6eb)
-![Setup](https://github.com/user-attachments/assets/980222b1-9093-4378-9036-93c02e443fc0)
+![Desktop](https://github.com/user-attachments/assets/dd87aaa7-8afc-4bcf-8cfb-4363e015d20e)
+![Dev](https://github.com/user-attachments/assets/168839ef-0f31-4617-bfa8-5d726044d565)
+![Terminal](https://github.com/user-attachments/assets/9eb456b9-4ed2-4620-a7cf-bb892715f314)
 
 # Index
 
