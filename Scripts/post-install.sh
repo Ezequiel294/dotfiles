@@ -25,8 +25,11 @@ echo "VISUAL=nvim" | sudo tee -a /etc/environment
 echo "TERM=kitty" | sudo tee -a /etc/environment
 echo "Environment variables have been set"
 
-# Adding user to the libvirt group
-echo -e "\nAdding user to the libvirt group..."
+# QEMU setup
+echo -e "\nSetting up QEMU..."
+echo "Enabling libvirtd service..."
+sudo systemctl enable libvirtd
+echo "Adding user to the libvirt group..."
 sudo usermod -aG libvirt $USER
 echo "User has been added to the libvirt group"
 
@@ -59,9 +62,8 @@ wget -P "$(bat --config-dir)/themes" https://github.com/catppuccin/bat/raw/main/
 bat cache --build
 echo "Bat catppuccin theme has been installed"
 
-# Enable services
-echo -e "\nEnabling services..."
-sudo systemctl enable libvirtd
+# Enable login manager service
+echo -e "\nEnabling login manager service..."
 sudo systemctl enable ly
 echo "Services have been enabled"
 
