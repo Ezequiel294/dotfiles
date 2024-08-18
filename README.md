@@ -37,7 +37,7 @@ The following instructions are a guide to installing and configuring Arch. Befor
 
 1. After installing Arch, run my post-installation script
 ```bash
-sh $HOME/Scripts/post-install.sh | tee -a $HOME/Scripts/logs/post-install.log
+sh $HOME/Scripts/post-install.sh
 ```
 
 2. Restart your computer
