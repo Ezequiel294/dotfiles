@@ -41,10 +41,10 @@ read -p "Enter your Git email: " git_email
 git config --global user.email "$git_email"
 # Install Git Credential Manager
 echo -e "\nInstalling Git Credential Manager..."
-cd Repos
+cd Repos/
 curl -L https://aka.ms/gcm/linux-install-source.sh | sh
 git-credential-manager configure
-cd
+cd $HOME
 echo "Setting Git built-in cache..."
 git config --global credential.credentialStore cache
 git config --global credential.cacheOptions "--timeout 1800"
