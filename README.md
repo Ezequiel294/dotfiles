@@ -6,8 +6,11 @@
 
 # Index
 
+- [Sway](#sway)
+- [Index](#index)
 - [Overview](#overview)
 - [List of Requirements](#list-of-requirements)
+- [Arch Installation](#arch-installation)
 - [Sway installation and configuration](#sway-installation-and-configuration)
 - [FAQ](#faq)
 
@@ -34,7 +37,7 @@ The following instructions are a guide to installing and configuring Arch. Befor
 
 1. After installing Arch, run my post-installation script
 ```bash
-bash $HOME/Scripts/post-install.sh
+sh $HOME/Scripts/post-install.sh | tee -a $HOME/Scripts/logs/post-install.log
 ```
 
 2. Restart your computer
@@ -46,7 +49,7 @@ reboot
 
 To update the pkg.txt file with all the packages installed in your system
 ```bash
-bash $HOME/Scripts/Arch/update_pkg.sh
+sh $HOME/Scripts/Arch/update_pkg.sh
 ```
 
 To push the modification, you have to use dotfiles instead of git.
