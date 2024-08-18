@@ -13,9 +13,12 @@ return {
 					hide_dotfiles = false,
 					hide_gitignored = false,
 				},
+                window = {
+                    position = "float",
+                }
 
 			},
 		})
-		vim.keymap.set("n", "<leader>fe", ":Neotree toggle=true position=current <CR>")
+		vim.keymap.set("n", "<leader>fe", ":Neotree toggle=true position=float <CR>")
 	end,
 }
