@@ -6,8 +6,6 @@
 
 # Index
 
-- [Sway](#sway)
-- [Index](#index)
 - [Overview](#overview)
 - [List of Requirements](#list-of-requirements)
 - [Arch Installation](#arch-installation)
