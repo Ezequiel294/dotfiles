@@ -70,7 +70,7 @@ input type:touchpad {
     # Start Password Manager
     bindsym $mod+p exec keepassxc
     # Screenshot
-    bindsym Print exec slurp | grim -g - screenshot.png
+    bindsym Print exec grim -g "$(slurp)" -t jpeg -q 100 ~/Pictures/Screenshots/$(date +%Y-%m-%d-%H-%M-%S).jpeg
 
 # Floating windows:
 #
