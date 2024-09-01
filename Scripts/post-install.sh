@@ -51,6 +51,13 @@ git config --global credential.cacheOptions "--timeout 1800"
 echo "Git Credential Manager has been installed"
 echo "Git has been set up"
 
+# Setting up Neovim
+echo -e "\nSetting up Neovim..."
+cd $HOME/.config
+git clone https://github.com/Ezequiel294/nvim
+cd
+echo "Neovim has been set up"
+
 # Install yarn and neovim npm package
 echo -e "\nInstalling yarn and npm neovim packages..."
 sudo npm install -g neovim yarn
