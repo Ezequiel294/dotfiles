@@ -4,17 +4,9 @@
 set -e
 set -o pipefail
 
-# Install paru
-echo -e "\nInstalling paru..."
-cd $HOME
-git clone https://aur.archlinux.org/paru.git
-cd paru
-makepkg -si
-echo "Paru has been installed"
-
 # Install packages
 echo -e "\nInstalling packages..."
-cat $HOME/Scripts/pkg.txt | xargs paru -S --needed --noconfirm
+cat $HOME/Scripts/pkg.txt | xargs sudo pacman -S --needed --noconfirm
 
 # Set environment variables
 echo -e "\nSetting environment variables..."
