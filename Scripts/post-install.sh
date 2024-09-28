@@ -17,6 +17,15 @@ echo "VISUAL=nvim" | sudo tee -a /etc/environment
 echo "TERM=kitty" | sudo tee -a /etc/environment
 echo "Environment variables have been set"
 
+# Install the nix package manager
+echo -e "\nInstalling nix package manager..."
+sudo pacman -S --needed --noconfirm nix
+sudo systemctl enable nix-daemon.service
+sudo usermod -aG nix-users $USER
+sudo nix-channel --add https://nixos.org/channels/nixpkgs-unstable
+sudo nix-channel --update
+echo -e "\nNix package manager installed."
+
 # QEMU setup
 echo -e "\nSetting up QEMU..."
 echo "Enabling libvirtd service..."
