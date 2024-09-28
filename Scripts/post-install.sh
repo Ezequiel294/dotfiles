@@ -6,7 +6,7 @@ set -o pipefail
 
 # Install packages
 echo -e "\nInstalling packages..."
-cat $HOME/Scripts/pkg.txt | xargs sudo pacman -S --needed --noconfirm
+sudo pacman $(cat $HOME/Scripts/pkg.txt) -S --needed --noconfirm
 
 # Set environment variables
 echo -e "\nSetting environment variables..."
