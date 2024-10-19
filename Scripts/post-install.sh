@@ -8,6 +8,21 @@ set -o pipefail
 echo -e "\nInstalling packages..."
 sudo pacman $(cat $HOME/Scripts/pkg.txt) -S --needed --noconfirm
 
+# Install the nix package manager and extra packages
+echo -e "\nInstalling nix package manager..."
+sudo pacman -S --needed --noconfirm nix
+sudo systemctl enable nix-daemon.service
+sudo usermod -aG nix-users $USER
+sudo nix-channel --add https://nixos.org/channels/nixpkgs-unstable
+sudo nix-channel --update
+nix-env -iA nixpkgs.ani-cli
+nix-env -iA nixpkgs.microsoft-edge-dev
+nix-env -iA nixpkgs.pwvucontrol
+nix-env -iA nixpkgs.spotify
+nix-env -iA nixpkgs.vscode-with-extensions
+nix-env -iA nixpkgs.insync
+echo -e "\nNix package manager installed."
+
 # Set environment variables
 echo -e "\nSetting environment variables..."
 echo "QT_QPA_PLATFORMTHEME=qt6ct" | sudo tee -a /etc/environment
@@ -16,15 +31,6 @@ echo "EDITOR=nvim" | sudo tee -a /etc/environment
 echo "VISUAL=nvim" | sudo tee -a /etc/environment
 echo "TERM=kitty" | sudo tee -a /etc/environment
 echo "Environment variables have been set"
-
-# Install the nix package manager
-echo -e "\nInstalling nix package manager..."
-sudo pacman -S --needed --noconfirm nix
-sudo systemctl enable nix-daemon.service
-sudo usermod -aG nix-users $USER
-sudo nix-channel --add https://nixos.org/channels/nixpkgs-unstable
-sudo nix-channel --update
-echo -e "\nNix package manager installed."
 
 # QEMU setup
 echo -e "\nSetting up QEMU..."
