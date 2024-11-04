@@ -19,7 +19,7 @@ nix-env -iA nixpkgs.ani-cli
 nix-env -iA nixpkgs.microsoft-edge-dev
 nix-env -iA nixpkgs.pwvucontrol
 nix-env -iA nixpkgs.spotify
-nix-env -iA nixpkgs.vscode-with-extensions
+nix-env -iA nixpkgs.vscode-fhs
 nix-env -iA nixpkgs.insync
 echo -e "\nNix package manager installed."
 
