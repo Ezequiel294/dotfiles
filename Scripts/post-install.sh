@@ -8,16 +8,6 @@ set -o pipefail
 echo -e "\nInstalling packages..."
 sudo pacman $(cat $HOME/Scripts/pkg.txt) -S --needed --noconfirm
 
-# Set environment variables
-echo -e "\nSetting environment variables..."
-echo "QT_QPA_PLATFORMTHEME=qt6ct" | sudo tee -a /etc/environment
-echo 'GTK_THEME="Breeze-Dark"' | sudo tee -a /etc/environment
-echo "NIXPKGS_ALLOW_UNFREE=1" | sudo tee -a /etc/environment
-echo "EDITOR=nvim" | sudo tee -a /etc/environment
-echo "VISUAL=nvim" | sudo tee -a /etc/environment
-echo "TERM=kitty" | sudo tee -a /etc/environment
-echo -e "Environment variables have been set\n"
-
 # Install the nix package manager and extra packages
 echo -e "\nConfiguring Nix package manager"
 sudo nix-channel --add https://nixos.org/channels/nixpkgs-unstable
