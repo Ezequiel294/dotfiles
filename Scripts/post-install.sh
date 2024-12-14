@@ -13,7 +13,7 @@ echo -e "\nConfiguring Nix package manager"
 sudo nix-channel --add https://nixos.org/channels/nixpkgs-unstable
 sudo nix-channel --update
 nix-env -iA nixpkgs.ani-cli
-nix-env -iA nixpkgs.microsoft-edge-dev
+nix-env -iA nixpkgs.microsoft-edge
 nix-env -iA nixpkgs.pwvucontrol
 nix-env -iA nixpkgs.spotify
 nix-env -iA nixpkgs.insync
