@@ -19,9 +19,8 @@ nix-env -iA nixpkgs.ani-cli
 nix-env -iA nixpkgs.microsoft-edge-dev
 nix-env -iA nixpkgs.pwvucontrol
 nix-env -iA nixpkgs.spotify
-nix-env -iA nixpkgs.vscode-fhs
 nix-env -iA nixpkgs.insync
-echo -e "\nNix package manager installed."
+echo -e "Nix package manager installed.\n"
 
 # Set environment variables
 echo -e "\nSetting environment variables..."
@@ -30,7 +29,7 @@ echo 'GTK_THEME="Breeze-Dark"' | sudo tee -a /etc/environment
 echo "EDITOR=nvim" | sudo tee -a /etc/environment
 echo "VISUAL=nvim" | sudo tee -a /etc/environment
 echo "TERM=kitty" | sudo tee -a /etc/environment
-echo "Environment variables have been set"
+echo -e "Environment variables have been set\n"
 
 # QEMU setup
 echo -e "\nSetting up QEMU..."
@@ -38,7 +37,7 @@ echo "Enabling libvirtd service..."
 sudo systemctl enable libvirtd
 echo "Adding user to the libvirt group..."
 sudo usermod -aG libvirt $USER
-echo "User has been added to the libvirt group"
+echo -e "User has been added to the libvirt group\n"
 
 # Setting up Git
 echo -e "\nSetting up Git..."
@@ -56,29 +55,31 @@ echo "Setting Git built-in cache..."
 git config --global credential.credentialStore cache
 git config --global credential.cacheOptions "--timeout 1800"
 echo "Git Credential Manager has been installed"
-echo "Git has been set up"
+echo -e "Git has been set up\n"
 
 # Setting up Neovim
 echo -e "\nSetting up Neovim..."
 cd $HOME/.config
 git clone https://github.com/Ezequiel294/nvim
 cd
-echo "Neovim has been set up"
+echo -e "Neovim has been set up\n"
 
 # Install yarn and neovim npm package
 echo -e "\nInstalling yarn and npm neovim packages..."
 sudo npm install -g neovim yarn
-echo "Yarn has been installed"
+echo -e "Yarn and Neovim npm packages have been installed\n"
 
 # Install bat catppuccin theme
 echo -e "\nInstalling bat catppuccin theme..."
 wget -P "$(bat --config-dir)/themes" https://github.com/catppuccin/bat/raw/main/themes/Catppuccin%20Mocha.tmTheme
 bat cache --build
-echo "Bat catppuccin theme has been installed"
+echo -e "Bat catppuccin theme has been installed\n"
 
 # Enable login manager service
 echo -e "\nEnabling login manager service..."
 sudo systemctl enable ly
-echo "Services have been enabled"
+echo -e "Services have been enabled\n"
+
+fastfetch
 
 echo -e "\nPost-installation complete"
