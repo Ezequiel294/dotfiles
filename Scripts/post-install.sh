@@ -4,6 +4,11 @@
 set -e
 set -o pipefail
 
+# User questions
+echo -e "\n"
+read -p "Enter your Git name: " git_name
+read -p "Enter your Git email: " git_email
+
 # Install packages
 echo -e "\nInstalling packages..."
 sudo pacman $(cat $HOME/Scripts/pkg.txt) -S --needed --noconfirm
@@ -13,9 +18,9 @@ echo -e "\nConfiguring Nix package manager"
 sudo nix-channel --add https://nixos.org/channels/nixpkgs-unstable
 sudo nix-channel --update
 nix-env -iA nixpkgs.ani-cli
-nix-env -iA nixpkgs.microsoft-edge
 nix-env -iA nixpkgs.pwvucontrol
 nix-env -iA nixpkgs.spotify
+nix-env -iA nixpkgs.dropbox
 nix-env -iA nixpkgs.insync
 echo -e "Nix package manager configured.\n"
 
@@ -29,16 +34,12 @@ echo -e "User has been added to the libvirt group\n"
 
 # Setting up Git
 echo -e "\nSetting up Git..."
-read -p "Enter your Git name: " git_name
 git config --global user.name "$git_name"
-read -p "Enter your Git email: " git_email
 git config --global user.email "$git_email"
 # Install Git Credential Manager
 echo -e "\nInstalling Git Credential Manager..."
-cd Repos/
 curl -L https://aka.ms/gcm/linux-install-source.sh | sh
 git-credential-manager configure
-cd $HOME
 echo "Setting Git built-in cache..."
 git config --global credential.credentialStore cache
 git config --global credential.cacheOptions "--timeout 1800"
