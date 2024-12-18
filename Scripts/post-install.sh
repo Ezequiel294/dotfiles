@@ -58,6 +58,9 @@ echo -e "\nInstalling yarn and npm neovim packages..."
 sudo npm install -g neovim yarn
 echo -e "Yarn and Neovim npm packages have been installed\n"
 
+# Set nerd font synmbols for starship prompt
+starship preset nerd-font-symbols -o ~/.config/starship.toml
+
 # Install bat catppuccin theme
 echo -e "\nInstalling bat catppuccin theme..."
 wget -P "$(bat --config-dir)/themes" https://github.com/catppuccin/bat/raw/main/themes/Catppuccin%20Mocha.tmTheme
