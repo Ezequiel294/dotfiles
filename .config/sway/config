@@ -9,7 +9,7 @@ exec insync start
 # Bluetooth tray
 exec blueman-applet
 # KeepassXC
-exec keepassxc
+exec sleep 3 && keepassxc
 # Dropbox
 exec sleep 5 && dropbox
 
