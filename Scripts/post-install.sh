@@ -9,20 +9,20 @@ echo -e "\n"
 read -p "Enter your Git name: " git_name
 read -p "Enter your Git email: " git_email
 
+# Install AUR helper yay
+echo -e "\nInstalling yay..."
+sudo pacman -S --needed git base-devel
+git clone https://aur.archlinux.org/yay-bin.git
+cd yay-bin
+makepkg -si
+cd
+rm -rf yay-bin
+echo -e "yay has been installed\n"
+
 # Install packages
 echo -e "\nInstalling packages..."
-sudo pacman $(cat $HOME/Scripts/pkg.txt) -S --needed --noconfirm
-
-# Install the nix package manager and extra packages
-echo -e "\nConfiguring Nix package manager"
-sudo nix-channel --add https://nixos.org/channels/nixpkgs-unstable
-sudo nix-channel --update
-nix-env -iA nixpkgs.ani-cli
-nix-env -iA nixpkgs.pwvucontrol
-nix-env -iA nixpkgs.spotify
-nix-env -iA nixpkgs.dropbox
-nix-env -iA nixpkgs.insync
-echo -e "Nix package manager configured.\n"
+yay $(cat $HOME/Scripts/pkg.txt) -S --needed --noconfirm
+echo -e "Packages installed correctly\n"
 
 # QEMU setup
 echo -e "\nSetting up QEMU..."
