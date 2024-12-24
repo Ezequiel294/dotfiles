@@ -9,7 +9,7 @@ exec insync start
 # Bluetooth tray
 exec blueman-applet
 # KeepassXC
-exec sleep 3 && keepassxc
+exec sleep 3 && keepassxc Dropbox/passwords.kdbx
 # Dropbox
 exec sleep 5 && dropbox
 
@@ -104,6 +104,10 @@ input type:touchpad {
         bindsym Return mode "default"
         bindsym Escape mode "default"
     }
+
+    # Floating windows rules
+    #
+    for_window [title=".*\\[Locked\\].* - KeePassXC"] floating enable, border 1, resize set 800 px 600 px, move position center
 
 # Moving around:
 #
