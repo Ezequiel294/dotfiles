@@ -8,6 +8,8 @@ exec autotiling
 exec insync start
 # Bluetooth tray
 exec blueman-applet
+# Set bat theme
+exec bat cache --build
 # KeepassXC
 exec sleep 3 && keepassxc Dropbox/passwords.kdbx
 # Dropbox
@@ -23,7 +25,7 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term kitty
+set $term ghostty -e fish
 # Your preferred application launcher
 set $menu wofi --show drun
 

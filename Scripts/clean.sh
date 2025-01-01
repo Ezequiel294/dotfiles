@@ -8,6 +8,10 @@ sudo journalctl -p 3 -xb --vacuum-time=7d
 echo -e "\nRunning paccache"
 paccache -r
 
+# Yay cleaning
+echo -e "\nRunning yay -clean"
+yay -clean
+
 # Calculate the size of the .cache directory
 cache_size=$(du -sh ~/.cache 2>/dev/null | awk '{print $1}')
 echo -e "\nThe .cache directory is currently using $cache_size of space."
