@@ -3,10 +3,15 @@ shell-integration = fish
 
 # Appearance settings
 theme = "Dark Pastel"
-font-family = "JetBrainsMono Nerd Font"
-font-size = 12
 background-opacity = 0.85
 window-decoration = false
+
+# Font settings
+font-family = "JetBrainsMono Nerd Font"
+font-feature = -calt
+font-feature = -liga
+font-feature = -dlig
+font-size = 12
 
 # Cursor settings
 cursor-style = block
