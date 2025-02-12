@@ -73,6 +73,8 @@ input type:touchpad {
     bindsym $mod+p exec keepassxc
     # Screenshot
     bindsym Print exec grim -g "$(slurp)" -t jpeg -q 100 ~/Pictures/Screenshots/$(date +%Y-%m-%d-%H-%M-%S).jpeg
+    # Windwos 10 VM
+    bindsym $mod+w exec virt-manager --connect qemu:///system --show-domain-console win10
 
 # Floating windows:
 #
