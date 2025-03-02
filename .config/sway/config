@@ -36,9 +36,9 @@ output * bg $HOME/Pictures/Wallpapers/evening-sky.png fill
 ### Idle configuration
 #
 exec swayidle -w \
-       timeout 300 'swaylock -f -c 000000' \
-        timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-        before-sleep 'swaylock -f -c 000000'
+     timeout 300 'swaylock -f -c 000000' \
+     timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+     before-sleep 'swaylock -f -c 000000'
 # Keybinding to lock the screen manually
 bindsym Mod4+i exec swaylock -f -c 000000
 
@@ -47,8 +47,8 @@ bindsym Mod4+i exec swaylock -f -c 000000
 
 # Touchpad:
 input type:touchpad {
-	tap enable
-	natural_scroll enable
+    tap enable
+    natural_scroll enable
     scroll_factor 0.5
 }
 
