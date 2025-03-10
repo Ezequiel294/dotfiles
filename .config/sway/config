@@ -52,6 +52,12 @@ input type:touchpad {
     scroll_factor 0.5
 }
 
+# Keyboard layout:
+input * {
+    xkb_layout us,es
+}
+
+
 ### Key bindings
 #
 
@@ -69,6 +75,8 @@ input type:touchpad {
     bindsym $mod+r exec $menu
     # Start file manager
     bindsym $mod+e exec thunar
+    # Switch keyboard layout
+    bindsym $mod+Space input * xkb_switch_layout next
     # Start Password Manager
     bindsym $mod+p exec keepassxc
     # Screenshot
@@ -169,8 +177,6 @@ input type:touchpad {
     bindsym $mod+v splitv
     # Make the current focus fullscreen
     bindsym $mod+f fullscreen
-    # Swap focus between the tiling area and the floating area
-    bindsym $mod+space focus mode_toggle
 
 # Scratchpad:
 #
