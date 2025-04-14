@@ -225,7 +225,7 @@ gaps inner 1
 set $gnome_schema org.gnome.desktop.interface
 exec_always {
     gsettings set $gnome_schema gtk-theme "Breeze-Dark"
-    gsettings set $gnome_schema icon-theme "Adwaita"
+    gsettings set $gnome_schema icon-theme "Breeze-Dark"
     gsettings set $gnome_schema cursor-theme "Adwaita"
     gsettings set $gnome_schema font-name "Cantarell 10"
     gsettings set $gnome_schema cursor-size "24"
