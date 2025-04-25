@@ -24,14 +24,6 @@ echo -e "\nInstalling packages..."
 yay $(cat $HOME/Scripts/pkg.txt) -S --needed --noconfirm
 echo -e "Packages installed correctly\n"
 
-# QEMU setup
-echo -e "\nSetting up QEMU..."
-echo "Enabling libvirtd service..."
-sudo systemctl enable libvirtd
-echo "Adding user to the libvirt group..."
-sudo usermod -aG libvirt $USER
-echo -e "User has been added to the libvirt group\n"
-
 # Setting up Git
 echo -e "\nSetting up Git..."
 git config --global user.name "$git_name"
