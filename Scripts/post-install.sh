@@ -24,6 +24,14 @@ echo -e "\nInstalling packages..."
 yay $(cat $HOME/Scripts/pkg.txt) -S --needed --noconfirm
 echo -e "Packages installed correctly\n"
 
+# QEMU setup
+echo -e "\nSetting up QEMU..."
+echo "Enabling libvirtd service..."
+sudo systemctl enable libvirtd
+echo "Adding user to the libvirt group..."
+sudo usermod -aG libvirt $USER
+echo -e "User has been added to the libvirt group\n"
+
 # Setting up Git
 echo -e "\nSetting up Git..."
 git config --global user.name "$git_name"
@@ -44,11 +52,6 @@ cd $HOME/.config
 git clone https://github.com/Ezequiel294/nvim
 cd
 echo -e "Neovim has been set up\n"
-
-# Install yarn and neovim npm package
-echo -e "\nInstalling yarn and npm neovim packages..."
-sudo npm install -g neovim yarn
-echo -e "Yarn and Neovim npm packages have been installed\n"
 
 # Set nerd font synmbols for starship prompt
 starship preset nerd-font-symbols -o ~/.config/starship.toml
