@@ -4,7 +4,7 @@ shell-integration = fish
 # Appearance settings
 theme = "Dark Pastel"
 background-opacity = 0.85
-window-decoration = false
+window-decoration = true
 
 # Font settings
 font-family = "JetBrainsMono Nerd Font"
@@ -19,7 +19,7 @@ cursor-style-blink = false
 adjust-cursor-thickness = 1
 
 # Keybindings
-keybind = shift+r=reload_config
+keybind = control+shift+r=reload_config
 
 # Clipboard settings
 clipboard-read = allow

@@ -9,6 +9,16 @@ echo -e "\n"
 read -p "Enter your Git name: " git_name
 read -p "Enter your Git email: " git_email
 
+# Set environment variables
+echo -e "\nSetting environment variables..."
+echo "QT_QPA_PLATFORMTHEME=qt6ct" | sudo tee -a /etc/environment
+echo 'GTK_THEME="Breeze-Dark"' | sudo tee -a /etc/environment
+echo "BROWSER=firefox-developer-edition" | sudo tee -a /etc/environment
+echo "EDITOR=nvim" | sudo tee -a /etc/environment
+echo "VISUAL=nvim" | sudo tee -a /etc/environment
+echo "TERM=ghostty" | sudo tee -a /etc/environment
+echo -e "Environment variables have been set\n"
+
 # Install AUR helper yay
 echo -e "\nInstalling yay..."
 sudo pacman -S --needed git base-devel
