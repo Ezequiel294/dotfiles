@@ -16,6 +16,3 @@ zoxide init --cmd cd fish | source
 # Starship
 starship init fish | source
 
-# start in tmux
-tmux
-
