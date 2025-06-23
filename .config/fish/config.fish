@@ -4,7 +4,7 @@ set fish_greeting ""
 alias tree "exa -T"
 alias tmux "tmux -2"
 alias grep "grep --color=auto"
-alias pi5 "ssh ezequiel@186.159.146.215"
+alias pi5 "ssh ezequiel@186.159.146.215 -p 2222"
 alias ls "exa --group-directories-first"
 alias cat "bat --color=always --style=numbers"
 alias fzf='fzf --preview "bat --color=always --style=numbers {}"'
