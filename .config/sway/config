@@ -25,7 +25,7 @@ set $right l
 # Your preferred terminal emulator
 set $term ghostty -e fish
 # Your preferred application launcher
-set $menu wofi --show drun
+set $menu wofi -a --show drun
 
 ### Output configuration
 #
@@ -203,7 +203,7 @@ input * {
 bar {
     status_command i3status
     position bottom
-    font jetbrains mono nerd 10
+    font cantarell 10.5
     colors {
         statusline #ffffff
         background #000000
