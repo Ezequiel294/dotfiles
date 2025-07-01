@@ -14,10 +14,10 @@ general {
 
 order += "battery all"
 order += "volume master"
+order += "memory"
+order += "cpu_usage"
 order += "wireless _first_"
 order += "ethernet _first_"
-#order += "cpu_usage"
-#order += "memory"
 order += "tztime local"
 
 wireless _first_ {
@@ -41,13 +41,13 @@ battery all {
         format_down = ""
 }
 
-#cpu_usage {
-#        format = "CPU %usage"
-#}
+cpu_usage {
+        format = "   %usage"
+}
 
-#memory {
-#        format = "RAM %percentage_used"
-#}
+memory {
+        format = "   %percentage_used"
+}
 
 volume master {
     format = "    %volume"
