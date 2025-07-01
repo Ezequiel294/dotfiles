@@ -203,7 +203,7 @@ input * {
 bar {
     status_command i3status
     position bottom
-    font jetbrains mono nerd 11
+    font JetBrainsMono Nerd Font 10
     colors {
         statusline #ffffff
         background #000000
