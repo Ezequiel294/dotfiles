@@ -33,7 +33,7 @@ ethernet _first_ {
 battery all {
         format = "%status %percentage"
         status_full = "󰁹 "
-        status_chr = ""
+        status_chr = ""
         status_bat = "󰁾"
         status_idle = "󰁾 IDLE"
         last_full_capacity = true
