@@ -8,8 +8,9 @@
 
 general {
         output_format = "i3bar"
+        separator = " | "
         colors = true
-        interval = 5
+        interval = 3
 }
 
 order += "battery all"
@@ -32,7 +33,7 @@ ethernet _first_ {
 
 battery all {
         format = "%status %percentage"
-        status_full = "󰁹 "
+        status_full = "󰁹"
         status_chr = ""
         status_bat = "󰁾"
         status_idle = "󰁾 IDLE"
