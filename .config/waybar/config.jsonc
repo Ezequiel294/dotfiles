@@ -2,7 +2,7 @@
 {
   "layer": "top", // Waybar at top layer
   "position": "top", // Waybar position (top|bottom|left|right)
-  "spacing": 4, // Gaps between modules (4px)
+  "spacing": 2, // Gaps between modules (4px)
 
   // Choose the order of the modules
   "modules-left": [
@@ -86,7 +86,7 @@
 
   "tray": {
     "icon-size": 18,
-    "spacing": 10,
+    "spacing": 5,
   },
 
   "clock": {
@@ -144,7 +144,7 @@
   "network": {
     // "interface": "wlp2*", // (Optional) To force the use of this interface
     "format-wifi": "{essid}   ",
-    "format-ethernet": "{ipaddr}/{cidr}  󰈀 ",
+    "format-ethernet": "{ifname}  󰈀 ",
     "tooltip-format": "{ifname} via {gwaddr}",
     "format-linked": "{ifname} (No IP)",
     "format-disconnected": "WAN Disconnected",
@@ -153,12 +153,12 @@
 
   "pulseaudio": {
     // "scroll-step": 1, // %, can be a float
-    "format": "{volume}% {icon}  {format_source}",
+    "format": "{volume}% {icon}  {format_source} ",
     "format-bluetooth": "{volume}% {icon} {format_source}",
     "format-bluetooth-muted": "  {icon} {format_source}",
     "format-muted": "{volume}%   {format_source}",
     "format-source": "",
-    "format-source-muted": " ",
+    "format-source-muted": "",
     "format-icons": {
       "headphone": "",
       "phone": "",
