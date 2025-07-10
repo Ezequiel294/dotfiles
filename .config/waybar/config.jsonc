@@ -29,7 +29,7 @@
 
     //"power-profiles-daemon",
     //"custom/separator",
-    
+
     "memory",
     "custom/separator",
 
@@ -51,8 +51,8 @@
   "custom/separator": {
     "format": "|",
     "interval": "once",
-    "tooltip": false
-},
+    "tooltip": false,
+  },
 
   "keyboard-state": {
     "numlock": true,
@@ -94,13 +94,13 @@
     "format-alt": "{:%Y-%m-%d}",
   },
 
-    "memory": {
-        "format": "{}%  ",
-    },
+  "memory": {
+    "format": "{}%  ",
+  },
 
   "cpu": {
     "format": "{usage}%  ",
-    "tooltip": false,
+    "tooltip": true,
   },
   "temperature": {
     // "thermal-zone": 2,
@@ -124,8 +124,8 @@
     },
     "format": "{capacity}% {icon}",
     "format-full": "{capacity}% {icon}",
-    "format-charging": "{capacity}% ",
-    "format-plugged": "{capacity}% ",
+    "format-charging": "{capacity}%  ",
+    "format-plugged": "{capacity}%  ",
     "format-alt": "{time} {icon}",
     "format-icons": ["󰁺", "󰁼", "󰁾", "󰂀", "󰁹"],
   },
@@ -153,12 +153,12 @@
 
   "pulseaudio": {
     // "scroll-step": 1, // %, can be a float
-    "format": "{volume}% {icon}  {format_source} ",
+    "format": "{volume}% {icon}  {format_source}",
     "format-bluetooth": "{volume}% {icon} {format_source}",
     "format-bluetooth-muted": "  {icon} {format_source}",
     "format-muted": "{volume}%   {format_source}",
-    "format-source": "",
-    "format-source-muted": "",
+    "format-source": " ",
+    "format-source-muted": " ",
     "format-icons": {
       "headphone": "",
       "phone": "",
@@ -168,7 +168,7 @@
     },
     "on-click": "pwvucontrol",
   },
-  
+
   "custom/media": {
     "format": "{icon} {text}",
     "return-type": "json",
