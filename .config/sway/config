@@ -200,16 +200,21 @@ input * {
 
 ### Status Bar:
 #
-bar {
-    status_command i3status
-    position bottom
-    font JetBrainsMono Nerd Font 10
-    colors {
-        statusline #ffffff
-        background #000000
-        inactive_workspace #32323200 #32323200 #5c5c5c
-    }
+exec_always {
+    pkill waybar
+    sleep 1 && waybar &
 }
+
+#bar {
+    #status_command i3status
+    #position bottom
+    #font JetBrainsMono Nerd Font 10
+    #colors {
+        #statusline #ffffff
+        #background #000000
+        #inactive_workspace #32323200 #32323200 #5c5c5c
+    #}
+#}
 
 ### Borders:
 #
