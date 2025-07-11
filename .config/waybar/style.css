@@ -1,5 +1,5 @@
 * {
-  font-family: "JetBrainsMono Nerd Font Mono Medium";
+  font-family: "JetBrainsMono Nerd Font";
   font-size: 14px;
   color: #ffffff;
   padding-bottom: 1px;
@@ -58,3 +58,4 @@ window#waybar {
   color: rgba(255, 255, 255, 0.3);
   margin: 0 1px;
 }
+

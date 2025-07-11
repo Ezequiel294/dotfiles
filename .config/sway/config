@@ -61,6 +61,8 @@ input * {
 
 # Basics:
 #
+    # Power Menu
+    bindsym $mod+Shift+p exec wlogout
     # Exit sway
     bindsym $mod+Shift+e exec swaynag -t warning -m "Exit Sway?" -B 'Yes, exit sway' 'swaymsg exit'
     # Reload the configuration file

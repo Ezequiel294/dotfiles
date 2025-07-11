@@ -1,53 +1,4 @@
-// -*- mode: jsonc -*-
 {
-  "layer": "top", // Waybar at top layer
-  "position": "top", // Waybar position (top|bottom|left|right)
-  "spacing": 2, // Gaps between modules (4px)
-
-  // Choose the order of the modules
-  "modules-left": [
-    "sway/workspaces",
-    "sway/mode",
-    "sway/scratchpad",
-    "custom/media",
-  ],
-
-  "modules-center": ["clock"],
-
-  "modules-right": [
-    "sway/language",
-    "custom/separator",
-
-    "idle_inhibitor",
-    "custom/separator",
-
-    "battery",
-    "custom/separator",
-
-    "pulseaudio",
-    "custom/separator",
-
-    //"power-profiles-daemon",
-    //"custom/separator",
-
-    "memory",
-    "custom/separator",
-
-    "cpu",
-    "custom/separator",
-
-    //"temperature",
-    //"custom/separator",
-
-    //"keyboard-state",
-    //"custom/separator",
-
-    "network",
-    "custom/separator",
-
-    "tray",
-  ],
-
   "custom/separator": {
     "format": "|",
     "interval": "once",
@@ -90,17 +41,25 @@
   },
 
   "clock": {
-    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "tooltip-format": "<tt><big>{calendar}</big></tt>",
     "format-alt": "{:%Y-%m-%d}",
+    "calendar": {
+      "mode": "month",
+      "format": {
+        "today": "<span background='#2ac3de' color='#1a1b26' ><b>{}</b></span>",
+      },
+    },
   },
 
   "memory": {
     "format": "{}%  ",
+    "on-click": "ghostty -e btop",
   },
 
   "cpu": {
     "format": "{usage}%  ",
     "tooltip": true,
+    "on-click": "ghostty -e btop",
   },
   "temperature": {
     // "thermal-zone": 2,
@@ -143,12 +102,11 @@
 
   "network": {
     // "interface": "wlp2*", // (Optional) To force the use of this interface
-    "format-wifi": "{essid}   ",
-    "format-ethernet": "{ifname}  󰈀 ",
-    "tooltip-format": "{ifname} via {gwaddr}",
-    "format-linked": "{ifname} (No IP)",
+    "format-wifi": "{essid}  ",
+    "format-ethernet": "{ipaddr}  󰈀 ",
+    "tooltip-format-wifi": "{ipaddr} ({signalStrength}%)",
     "format-disconnected": "WAN Disconnected",
-    "format-alt": "{ifname}: {ipaddr}/{cidr}",
+    "on-click": "ghostty -e nmtui",
   },
 
   "pulseaudio": {
@@ -169,16 +127,9 @@
     "on-click": "pwvucontrol",
   },
 
-  "custom/media": {
-    "format": "{icon} {text}",
-    "return-type": "json",
-    "max-length": 40,
-    "format-icons": {
-      "spotify": "",
-      "default": "🎜",
-    },
-    "escape": true,
-    "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null", // Script in resources folder
-    // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
-  },
+  "custom/power": {
+      "format": " ",
+      "on-click": "wlogout -p layer-shell",
+      "tooltip": false,
+  }
 }
