@@ -77,9 +77,10 @@
   },
 
   "battery": {
+    "interval": 5,
     "states": {
       "warning": 30,
-      "critical": 15,
+      "critical": 10,
     },
     "format": "{capacity}% {icon}",
     "format-full": "{capacity}% {icon}",
@@ -128,8 +129,8 @@
   },
 
   "custom/power": {
-      "format": " ",
-      "on-click": "wlogout -p layer-shell",
-      "tooltip": false,
-  }
+    "format": " ",
+    "on-click": "wlogout -p layer-shell",
+    "tooltip": false,
+  },
 }
