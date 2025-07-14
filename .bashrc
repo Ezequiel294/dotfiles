@@ -16,8 +16,8 @@ alias dotfiles="git --git-dir $HOME/.dotfiles/ --work-tree $HOME"
 
 # Enable colored prompt if supported
 case "$TERM" in
-    xterm-color|*-256color) color_prompt=yes;;
-    *) color_prompt=no;;
+xterm-color | *-256color) color_prompt=yes ;;
+*) color_prompt=no ;;
 esac
 
 # Force colored prompt if possible
@@ -41,4 +41,3 @@ fi
 unset color_prompt force_color_prompt
 
 tmux
-

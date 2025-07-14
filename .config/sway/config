@@ -78,7 +78,7 @@ input * {
     # Switch keyboard layout
     bindsym $mod+Space input * xkb_switch_layout next
     # Start Password Manager
-    bindsym $mod+p exec me.proton.Pass
+    bindsym $mod+p exec proton-pass
     # Screenshot
     bindsym Print exec grim -g "$(slurp)" -t jpeg -q 100 ~/Pictures/Screenshots/$(date +%Y-%m-%d-%H-%M-%S).jpeg
 
@@ -229,9 +229,9 @@ set $gnome_schema org.gnome.desktop.interface
 exec_always {
     gsettings set $gnome_schema gtk-theme "Breeze-Dark"
     gsettings set $gnome_schema icon-theme "Breeze-Dark"
-    gsettings set $gnome_schema cursor-theme "Adwaita"
     gsettings set $gnome_schema font-name "Cantarell 10"
-    gsettings set $gnome_schema cursor-size "24"
+    gsettings set $gnome_schema cursor-theme "Breeze"
+    gsettings set $gnome_schema cursor-size "16"
 }
 
 include /etc/sway/config.d/*

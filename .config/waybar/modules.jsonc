@@ -36,7 +36,6 @@
   },
 
   "tray": {
-    "icon-size": 18,
     "spacing": 5,
   },
 
@@ -126,11 +125,5 @@
       "default": ["", "", ""],
     },
     "on-click": "pwvucontrol",
-  },
-
-  "custom/power": {
-    "format": " ",
-    "on-click": "wlogout -p layer-shell",
-    "tooltip": false,
   },
 }

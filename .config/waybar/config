@@ -38,8 +38,6 @@
     "network",
     "custom/separator",
     "tray",
-    "custom/separator",
-    "custom/power",
   ],
 
   // Load modules configuration
