@@ -40,4 +40,4 @@ fi
 
 unset color_prompt force_color_prompt
 
-tmux
+fish
