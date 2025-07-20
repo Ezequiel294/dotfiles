@@ -1,7 +1,7 @@
 ### Autostart
 #
 # Authentication agent
-exec /usr/bin/lxpolkit 
+exec --no-startup-id lxqt-policykit-agent
 # Autotiling
 exec autotiling
 # Insync
@@ -29,6 +29,7 @@ set $menu wofi -a --show drun
 
 ### Output configuration
 #
+output * scale 1.75
 output * bg $HOME/Pictures/Wallpapers/evening-sky.png fill
 
 ### Idle configuration
@@ -61,8 +62,6 @@ input * {
 
 # Basics:
 #
-    # Power Menu
-    bindsym $mod+Shift+p exec wlogout
     # Exit sway
     bindsym $mod+Shift+e exec swaynag -t warning -m "Exit Sway?" -B 'Yes, exit sway' 'swaymsg exit'
     # Reload the configuration file
@@ -73,8 +72,6 @@ input * {
     bindsym $mod+q kill
     # Start your launcher
     bindsym $mod+r exec $menu
-    # Start file manager
-    bindsym $mod+e exec dolphin
     # Switch keyboard layout
     bindsym $mod+Space input * xkb_switch_layout next
     # Start Password Manager
@@ -92,32 +89,6 @@ input * {
     floating_modifier $mod normal
     # Toggle the current focus between tiling and floating mode
     bindsym $mod+tab floating toggle
-    # Resizing containers:
-    bindsym $mod+Shift+r mode "resize"
-    mode "resize" {
-        # left will shrink the containers width
-        # right will grow the containers width
-        # up will shrink the containers height
-        # down will grow the containers height
-        bindsym $left resize shrink width 10px
-        bindsym $down resize grow height 10px
-        bindsym $up resize shrink height 10px
-        bindsym $right resize grow width 10px
-
-        # Ditto, with arrow keys
-        bindsym Left resize shrink width 10px
-        bindsym Down resize grow height 10px
-        bindsym Up resize shrink height 10px
-        bindsym Right resize grow width 10px
-
-        # Return to default mode
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-    }
-
-    # Floating windows rules
-    #
-    for_window [title=".*\\[Locked\\].* - KeePassXC"] floating enable, border 1, resize set 800 px 600 px, move position center
 
 # Moving around:
 #
@@ -126,6 +97,7 @@ input * {
     bindsym $mod+$down focus down
     bindsym $mod+$up focus up
     bindsym $mod+$right focus right
+
     # Or use $mod+[up|down|left|right]
     bindsym $mod+Left focus left
     bindsym $mod+Down focus down
@@ -137,6 +109,7 @@ input * {
     bindsym $mod+Shift+$down move down
     bindsym $mod+Shift+$up move up
     bindsym $mod+Shift+$right move right
+
     # Ditto, with arrow keys
     bindsym $mod+Shift+Left move left
     bindsym $mod+Shift+Down move down
@@ -156,6 +129,7 @@ input * {
     bindsym $mod+8 workspace number 8
     bindsym $mod+9 workspace number 9
     bindsym $mod+0 workspace number 10
+
     # Move focused container to workspace
     bindsym $mod+Shift+1 move container to workspace number 1
     bindsym $mod+Shift+2 move container to workspace number 2
@@ -206,17 +180,6 @@ exec_always {
     pkill waybar
     sleep 1 && waybar &
 }
-
-#bar {
-    #status_command i3status
-    #position bottom
-    #font JetBrainsMono Nerd Font 10
-    #colors {
-        #statusline #ffffff
-        #background #000000
-        #inactive_workspace #32323200 #32323200 #5c5c5c
-    #}
-#}
 
 ### Borders:
 #
