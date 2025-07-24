@@ -3,15 +3,22 @@
 # Authentication agent
 exec --no-startup-id lxqt-policykit-agent
 # Autotiling
-exec autotiling
-# Insync
-exec insync start
-# Bluetooth tray
-exec blueman-applet
+exec --no-startup-id autotiling
 # Set bat theme
 exec bat cache --build
+# Insync
+exec insync start
 # Dropbox
-exec sleep 5 && dropbox
+exec dropbox
+# Bluetooth tray
+exec --no-startup-id blueman-applet
+
+### Status Bar:
+#
+exec_always --no-startup-id {
+    pkill waybar
+    sleep 1 && waybar
+}
 
 ### Variables
 #
@@ -173,13 +180,6 @@ input * {
 	bindsym XF86AudioPlay exec playerctl play-pause
 	bindsym XF86AudioNext exec playerctl next
 	bindsym XF86AudioPrev exec playerctl previous
-
-### Status Bar:
-#
-exec_always {
-    pkill waybar
-    sleep 1 && waybar &
-}
 
 ### Borders:
 #
