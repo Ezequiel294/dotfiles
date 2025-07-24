@@ -4,14 +4,14 @@
 exec --no-startup-id lxqt-policykit-agent
 # Autotiling
 exec --no-startup-id autotiling
+# Bluetooth tray
+exec --no-startup-id blueman-applet
 # Set bat theme
 exec bat cache --build
 # Insync
 exec insync start
 # Dropbox
 exec dropbox
-# Bluetooth tray
-exec --no-startup-id blueman-applet
 
 ### Status Bar:
 #
