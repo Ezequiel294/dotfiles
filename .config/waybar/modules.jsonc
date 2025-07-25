@@ -103,9 +103,10 @@
   "network": {
     // "interface": "wlp2*", // (Optional) To force the use of this interface
     "format-wifi": "{essid}  ",
-    "format-ethernet": "{ipaddr}  󰈀 ",
+    "format-ethernet": "Wired  󰈀 ",
     "tooltip-format-wifi": "{ipaddr} ({signalStrength}%)",
-    "format-disconnected": "WAN Disconnected",
+    "tooltip-format-ethernet": "{ipaddr}",
+    "format-disconnected": "Disconnected",
     "on-click": "ghostty -e nmtui",
   },
 
