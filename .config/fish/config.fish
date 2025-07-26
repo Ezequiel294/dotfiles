@@ -3,6 +3,7 @@ set fish_greeting ""
 # Aliases
 alias tree "exa -T"
 alias tmux "tmux -2"
+alias lazydocker "sudo /home/ezequiel/.local/bin/lazydocker"
 alias grep "grep --color=auto"
 alias pi5 "ssh ezequiel@186.159.146.215 -p 2222"
 alias ls "exa --group-directories-first"
