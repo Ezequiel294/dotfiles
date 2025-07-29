@@ -2,6 +2,7 @@
 #
 # Authentication agent
 exec --no-startup-id lxqt-policykit-agent
+for_window [title="Authentication Required"] floating enable
 # Autotiling
 exec --no-startup-id autotiling
 # Bluetooth tray
@@ -189,7 +190,7 @@ gaps inner 1
 ### Gtk theme
 #
 set $gnome_schema org.gnome.desktop.interface
-exec_alway gsettings set $gnome_schema cursor-size "16"
+exec_always gsettings set $gnome_schema cursor-size "16"
 #exec_always {
     #gsettings set $gnome_schema gtk-theme "Breeze-Dark"
     #gsettings set $gnome_schema icon-theme "Breeze-Dark"
