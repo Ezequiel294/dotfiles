@@ -80,6 +80,8 @@ input * {
     bindsym $mod+q kill
     # Start your launcher
     bindsym $mod+r exec $menu
+    # Start your file manager
+    bindsym $mod+e exec thunar
     # Switch keyboard layout
     bindsym $mod+Space input * xkb_switch_layout next
     # Start Password Manager
