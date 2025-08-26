@@ -3,6 +3,8 @@
 # Authentication agent
 exec --no-startup-id lxqt-policykit-agent
 for_window [title="Authentication Required"] floating enable
+# Monitor setup
+exec --no-startup-id kanshi
 # Autotiling
 exec --no-startup-id autotiling
 # Bluetooth tray
