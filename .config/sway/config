@@ -3,8 +3,6 @@
 # Authentication agent
 exec --no-startup-id lxqt-policykit-agent
 for_window [title="Authentication Required"] floating enable
-# Monitor setup
-exec --no-startup-id kanshi
 # Autotiling
 exec --no-startup-id autotiling
 # Bluetooth tray
@@ -15,6 +13,13 @@ exec bat cache --build
 exec insync start
 # Dropbox
 exec dropbox
+
+### Monitor Setup:
+#
+exec_always --no-startup-id {
+    pkill kanshi
+    sleep 1 && kanshi
+}
 
 ### Status Bar:
 #
