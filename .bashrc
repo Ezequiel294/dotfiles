@@ -41,3 +41,4 @@ fi
 unset color_prompt force_color_prompt
 
 fish
+
