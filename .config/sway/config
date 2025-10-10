@@ -44,8 +44,8 @@ set $menu wofi -a --show drun
 
 ### Output configuration
 #
-output * scale 1.75
 output * bg $HOME/Pictures/Wallpapers/evening-sky.png fill
+# --- Configure with Kanshi ---
 
 ### Idle configuration
 #
@@ -70,7 +70,6 @@ input type:touchpad {
 input * {
     xkb_layout us,es
 }
-
 
 ### Key bindings
 #

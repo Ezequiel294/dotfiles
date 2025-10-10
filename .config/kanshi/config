@@ -12,6 +12,10 @@ output "Lenovo Group Limited 0x8AAF Unknown" {
     alias $INTERNAL
 }
 
+profile alone {
+    output $INTERNAL enable
+}
+
 profile dorms {
     output $INTERNAL disable
     output $HP enable
