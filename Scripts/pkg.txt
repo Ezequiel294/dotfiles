@@ -1,1 +1,1 @@
-base base-devel bat btop docker eza fastfetch fish git lazygit man-db neovim nvm python starship sudo tmux unzip wget yazi zip
+base base-devel bat btop docker eza fastfetch zsh git lazygit man-db neovim nvm python starship sudo tmux unzip wget yazi zip
