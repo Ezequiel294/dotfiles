@@ -2,6 +2,7 @@
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
+setopt extendedglob
 bindkey -v
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
@@ -10,7 +11,6 @@ zstyle :compinstall filename '/home/ezequiel/.zshrc'
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
-#
 
 # Aliases
 alias ll="ls -l"
@@ -22,4 +22,8 @@ alias cat="bat --color=always"
 alias fzf='fzf --preview "bat --color=always --style=numbers {}"'
 alias dotfiles="git --git-dir $HOME/.dotfiles/ --work-tree $HOME"
 
+# Start starship prompt
 eval "$(starship init zsh)"
+
+# Start nvm
+. /usr/share/nvm/init-nvm.sh

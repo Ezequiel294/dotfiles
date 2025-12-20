@@ -9,9 +9,15 @@ echo -e "\n"
 read -p "Enter your Git name: " git_name
 read -p "Enter your Git email: " git_email
 
+# Install yay
+#sudo pacman -S --needed git base-devel
+#git clone https://aur.archlinux.org/yay.git .yay
+#cd .yay
+#makepkg -si
+
 # Install packages
 echo -e "\nInstalling packages..."
-sudo pacman $(cat $HOME/Scripts/pkg.txt) -S --needed --noconfirm
+yay $(cat $HOME/Scripts/pkg.txt) -S --needed --noconfirm
 echo -e "Packages installed correctly\n"
 
 # Setting up Git
@@ -32,7 +38,7 @@ cd
 echo -e "Neovim has been set up\n"
 
 # Set nerd font synmbols for starship prompt
-starship preset nerd-font-symbols -o ~/.config/starship.toml
+starship preset no-nerd-font -o ~/.config/starship.toml
 
 # Install tmux plugin manager
 echo -e "\nInstalling tmux plugin manager..."
