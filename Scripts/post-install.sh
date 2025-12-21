@@ -10,10 +10,10 @@ read -p "Enter your Git name: " git_name
 read -p "Enter your Git email: " git_email
 
 # Install yay
-#sudo pacman -S --needed git base-devel
-#git clone https://aur.archlinux.org/yay.git .yay
-#cd .yay
-#makepkg -si
+sudo pacman -S --needed git base-devel
+git clone https://aur.archlinux.org/yay.git .yay
+cd .yay
+makepkg -si
 
 # Install packages
 echo -e "\nInstalling packages..."

@@ -25,5 +25,12 @@ alias dotfiles="git --git-dir $HOME/.dotfiles/ --work-tree $HOME"
 # Start starship prompt
 eval "$(starship init zsh)"
 
+# Start ssh windows connection
+eval "$(/usr/sbin/wsl2-ssh-agent)"
+
 # Start nvm
 . /usr/share/nvm/init-nvm.sh
+
+# GPU settings
+export GALLIUM_DRIVER=d3d12
+export LIBVA_DRIVER_NAME=d3d12
