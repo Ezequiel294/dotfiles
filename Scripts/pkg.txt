@@ -1,1 +1,1 @@
-base base-devel bat btop docker eza fastfetch git lazygit man-db mesa neovim nvm python starship sudo tmux unzip wget yazi zip zsh
+ani-cli base base-devel bat btop docker eza fastfetch git jdk-openjdk lazygit man-db mesa miniconda3 neovim nvm openssh python starship sudo tmux unzip wget wsl2-ssh-agent xdg-utils yazi zip zsh
