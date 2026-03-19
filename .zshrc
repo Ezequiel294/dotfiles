@@ -7,10 +7,17 @@ bindkey -v
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/ezequiel/.zshrc'
-
-autoload -Uz compinit
-compinit
+# Initialize the completion system
+autoload -U compinit && compinit
+setopt menu_complete                     # Automatically list the menu on ambiguous completion
+zstyle ':completion:*' menu select=1
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+zstyle ':completion:*' rehash true
+zstyle ':completion:*' insert-tab false  # Don't insert a literal tab if no match
 # End of lines added by compinstall
+
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Aliases
 alias ll="ls -l"
