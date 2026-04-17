@@ -1,1 +1,1 @@
-ani-cli base base-devel bat btop docker eza fastfetch git jdk-openjdk lazydocker lazygit man-db mesa miniconda3 neovim nvm opencode openssh python starship sudo tmux unzip wget wsl2-ssh-agent xdg-utils yazi zip zsh zsh-autosuggestions zsh-completions zsh-syntax-highlighting
+ani-cli base base-devel bat btop docker eza fastfetch git jdk-openjdk lazydocker lazygit man-db maven mesa miniconda3 neovim nvm openssh python starship sudo tmux unzip wget xdg-utils yazi zip zsh zsh-autosuggestions zsh-completions zsh-syntax-highlighting

@@ -9,8 +9,6 @@ bindkey -v
 zstyle :compinstall filename '/home/ezequiel/.zshrc'
 # Initialize the completion system
 autoload -U compinit && compinit
-setopt menu_complete                     # Automatically list the menu on ambiguous completion
-zstyle ':completion:*' menu select=1
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 zstyle ':completion:*' rehash true
 zstyle ':completion:*' insert-tab false  # Don't insert a literal tab if no match
