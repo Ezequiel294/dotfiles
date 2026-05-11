@@ -3,13 +3,8 @@
 
 # except for these files...
 !README.md
-!Repos
-!Downloads
-!Pictures
-!Videos
-!Documents
-!Scripts
+!.zshrc
+!.zprofile
 !.tmux.conf
 !.config
-!.bashrc
 !.gitignore
