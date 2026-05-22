@@ -9,8 +9,9 @@ alias cat="bat --color=always"
 alias ls="eza --group-directories-first"
 alias pi5='ssh ezequiel@186.159.146.215 -p 2222'
 alias fzf='fzf --preview "bat --color=always --style=numbers {}"'
-alias ttu='cd /Users/ezequiel/Library/CloudStorage/ProtonDrive-ezequielbuckmartinez@proton.me-folder/TTU'
 alias dotfiles="git --git-dir $HOME/.dotfiles/ --work-tree $HOME"
+alias drive='cd /Users/ezequiel/Library/CloudStorage/ProtonDrive-ezequielbuckmartinez@proton.me-folder'
+alias ttu='cd /Users/ezequiel/Library/CloudStorage/ProtonDrive-ezequielbuckmartinez@proton.me-folder/TTU'
 
 # Starship Prompt
 eval "$(starship init zsh)"
@@ -22,3 +23,7 @@ source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 
 bindkey              '^I'         menu-complete
 bindkey "$terminfo[kcbt]" reverse-menu-complete
+
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
