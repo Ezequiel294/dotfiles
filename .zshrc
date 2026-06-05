@@ -17,15 +17,15 @@ alias tmux="tmux -2"
 alias grep="grep --color=auto"
 alias cat="bat --color=always"
 alias ls="eza --group-directories-first"
-alias pi5='ssh ezequiel@186.159.146.215 -p 2222'
 alias fzf='fzf --preview "bat --color=always --style=numbers {}"'
 alias dotfiles="git --git-dir $HOME/.dotfiles/ --work-tree $HOME"
 alias drive='cd /Users/ezequiel/Library/CloudStorage/ProtonDrive-ezequielbuckmartinez@proton.me-folder'
 alias ttu='cd /Users/ezequiel/Library/CloudStorage/ProtonDrive-ezequielbuckmartinez@proton.me-folder/TTU'
+alias pi5='ssh -i ~/Library/CloudStorage/ProtonDrive-ezequielbuckmartinez@proton.me-folder/SSH/Raspberry\ Pi/private-key ezequiel@186.159.146.215 -p 64712'
 
 ## Env Variables 
 # Java
-export JAVA_HOME="/opt/homebrew/Cellar/openjdk/25.0.2/libexec/openjdk.jdk/Contents/Home"
+export JAVA_HOME="/opt/homebrew/opt/openjdk@26/libexec/openjdk.jdk/Contents/Home"
 export PATH=$JAVA_HOME/bin:$PATH
 # Node Version Manager
 export NVM_DIR="$HOME/.nvm"
