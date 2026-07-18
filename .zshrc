@@ -25,8 +25,7 @@ alias pi5='ssh -i ~/Library/CloudStorage/ProtonDrive-ezequielbuckmartinez@proton
 
 ## Env Variables 
 # Java
-export JAVA_HOME="/opt/homebrew/opt/openjdk@26/libexec/openjdk.jdk/Contents/Home"
-export PATH=$JAVA_HOME/bin:$PATH
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 # Node Version Manager
 export NVM_DIR="$HOME/.nvm"
 [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
